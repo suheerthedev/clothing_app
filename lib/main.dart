@@ -1,3 +1,4 @@
+import 'package:clothing_store_app/screens/create_account_screen.dart';
 import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
 import 'package:clothing_store_app/screens/sign_in_screen.dart';
 import 'package:clothing_store_app/screens/splash_screen.dart';
@@ -21,12 +22,13 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
-      home: const SignInScreen(),
+      home: const CreateAccountScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),
         '/onboardingscreen1': (context) => const OnboardingScreen(),
         '/signinscreen': (context) => const SignInScreen(),
+        '/createaccountscreen': (context) => const CreateAccountScreen(),
       },
     );
   }

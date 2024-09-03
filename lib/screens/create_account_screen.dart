@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+class CreateAccountScreen extends StatefulWidget {
+  const CreateAccountScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<CreateAccountScreen> createState() => _CreateAccountScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _CreateAccountScreenState extends State<CreateAccountScreen> {
   bool passwordStatus = false;
   FaIcon passwordIcon = const FaIcon(FontAwesomeIcons.solidEye);
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -23,19 +24,40 @@ class _SignInScreenState extends State<SignInScreen> {
             // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const SizedBox(
-                height: 120,
+                height: 70,
               ),
-              const Text('Sign In',
+              const Text('Create Account',
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
               const SizedBox(
                 height: 5,
               ),
-              const Text(
-                "Hi! Welcome back, you've been missed.",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+              const Padding(
+                padding: EdgeInsets.only(left: 40, right: 40),
+                child: Text(
+                  "Fill your information below or register with your social account.",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                ),
               ),
               const SizedBox(
-                height: 80,
+                height: 60,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      labelText: 'Name',
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
+                      hintText: 'Enter Your Name',
+                      hintStyle: TextStyle(color: Colors.grey),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      )),
+                ),
+              ),
+              const SizedBox(
+                height: 25,
               ),
               Padding(
                 padding:
@@ -45,7 +67,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       labelText: 'Email',
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       hintText: 'Enter Your Email',
-                      hintStyle: const TextStyle(color: Colors.grey),
+                      hintStyle: TextStyle(color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
                       )),
@@ -90,25 +112,37 @@ class _SignInScreenState extends State<SignInScreen> {
                       )),
                 ),
               ),
-              const SizedBox(
-                height: 3,
-              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Checkbox(
+                      value: isChecked,
+                      onChanged: (bool) {
+                        setState(() {
+                          isChecked = !isChecked;
+                        });
+                      }),
                   InkWell(
                     onTap: () {
                       //Navigate to verfication page
                     },
                     child: const Text(
-                      "Forgot Password?",
+                      "Agree with ",
                       style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.brown,
-                          fontWeight: FontWeight.w500,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.brown),
+                        fontSize: 13,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
+                  ),
+                  const Text(
+                    "Terms & Conditions",
+                    style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.brown,
+                        fontWeight: FontWeight.w500,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.brown),
                   ),
                   const SizedBox(
                     width: 10,
@@ -126,7 +160,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     //Navigate to Other Screen
                   },
                   child: const Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(color: Colors.white),
                   )),
               const SizedBox(
@@ -144,7 +178,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       endIndent: 10,
                     )),
                     Text(
-                      'Or sign in with  ',
+                      'Or sign up with  ',
                       style:
                           TextStyle(color: Color.fromARGB(244, 158, 158, 158)),
                     ),
@@ -158,7 +192,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               SizedBox(
                 width: size.width * 0.5,
@@ -178,7 +212,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -190,7 +224,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       //Navigate To Create Account Page
                       Navigator.pushNamed(context, '/createaccountscreen');
                     },
-                    child: const Text(" Sign Up",
+                    child: const Text(" Sign In",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             color: Colors.brown,
