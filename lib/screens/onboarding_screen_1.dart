@@ -31,6 +31,10 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
     });
   }
 
+  void _goToSignInScreen() {
+    Navigator.pushReplacementNamed(context, '/signinscreen');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,9 +45,7 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                 right: 20,
                 top: 10,
                 child: InkWell(
-                  onTap: () {
-                    //Navigate to Login
-                  },
+                  onTap: _goToSignInScreen,
                   child: const Text('Skip',
                       style: TextStyle(
                           fontSize: 15,
@@ -204,7 +206,9 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                                 side: const BorderSide(
                                     style: BorderStyle.solid,
                                     color: Colors.brown)),
-                            onPressed: _goToNextPage,
+                            onPressed: currentPage == 2
+                                ? _goToSignInScreen
+                                : _goToNextPage,
                             child: const Icon(
                               Icons.arrow_forward,
                               color: Colors.white,

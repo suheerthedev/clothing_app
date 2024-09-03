@@ -110,23 +110,23 @@ class WelcomeScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Text.rich(
-            textAlign: TextAlign.center,
-            TextSpan(
-              children: [
-                TextSpan(
-                    text: 'Already have an account? ',
-                    style:
-                        TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
-                TextSpan(
-                    text: 'Fashion App',
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Already have an account? ',
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/signinscreen');
+                },
+                child: const Text('Sign In',
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                         decoration: TextDecoration.underline,
                         color: Color.fromARGB(255, 112, 79, 56))),
-              ],
-            ),
+              )
+            ],
           ),
         ],
       ),
