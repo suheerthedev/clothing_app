@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     final screenHeight = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(

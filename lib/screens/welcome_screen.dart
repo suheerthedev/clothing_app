@@ -87,7 +87,7 @@ class WelcomeScreen extends StatelessWidget {
             height: 20,
           ),
           const Padding(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
             child: Text(
               'Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt',
               textAlign: TextAlign.center,
