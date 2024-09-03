@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
+import 'package:clothing_store_app/screens/onboarding_screen_2.dart';
 import 'package:clothing_store_app/screens/splash_screen.dart';
 import 'package:clothing_store_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,11 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
-      home: const SplashScreen(),
+      home: const OnboardingScreen1(),
       routes: {
         '/welcomescreen': (context) => const WelcomeScreen(),
-        '/onboardingscreen1': (context) => const OnboardingScreen1(),
+        '/onboardingscreen1': (context) => OnboardingScreen1(),
+        '/onboardingscreen2': (context) => const OnboardingScreen2(),
       },
     );
   }
