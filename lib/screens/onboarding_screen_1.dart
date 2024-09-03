@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnboardingScreen1 extends StatefulWidget {
-  const OnboardingScreen1({super.key});
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen1> createState() => _OnboardingScreen1State();
+  State<OnboardingScreen> createState() => _OnboardingScreen1State();
 }
 
-class _OnboardingScreen1State extends State<OnboardingScreen1> {
+class _OnboardingScreen1State extends State<OnboardingScreen> {
   final _controller = PageController();
   int currentPage = 0;
 
