@@ -23,6 +23,14 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
     }
   }
 
+  void _goToPreviousPage() {
+    setState(() {
+      currentPage--;
+      _controller.animateToPage(currentPage,
+          duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,22 +85,76 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Text.rich(
-                      textAlign: TextAlign.center,
-                      TextSpan(children: [
-                        TextSpan(
-                            text: 'Seamless',
-                            style: TextStyle(
-                                fontSize: 26,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.brown)),
-                        TextSpan(
-                            text: ' Shopping Experience',
-                            style: TextStyle(
-                                fontSize: 26,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                      ]),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 9, right: 9),
+                      child: Text.rich(
+                        textAlign: TextAlign.center,
+                        TextSpan(children: [
+                          TextSpan(
+                              text: currentPage == 0
+                                  ? 'Seamless'
+                                  : currentPage == 1
+                                      ? 'Wishlist: Where'
+                                      : 'Swift ',
+                              style: currentPage == 0
+                                  ? const TextStyle(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.brown)
+                                  : currentPage == 1
+                                      ? const TextStyle(
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black)
+                                      : const TextStyle(
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.brown)),
+                          TextSpan(
+                              text: currentPage == 0
+                                  ? ' Shopping Experience'
+                                  : currentPage == 1
+                                      ? ' Fashion Dreams '
+                                      : 'and ',
+                              style: currentPage == 0
+                                  ? const TextStyle(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black)
+                                  : currentPage == 1
+                                      ? const TextStyle(
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.brown)
+                                      : const TextStyle(
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black)),
+                          TextSpan(
+                              text: currentPage == 1
+                                  ? 'Begin'
+                                  : currentPage == 2
+                                      ? 'Relaible'
+                                      : null,
+                              style: currentPage == 1
+                                  ? const TextStyle(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black)
+                                  : const TextStyle(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.brown)),
+                          TextSpan(
+                              text: currentPage == 2 ? ' Delivery' : null,
+                              style: currentPage == 2
+                                  ? const TextStyle(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black)
+                                  : null),
+                        ]),
+                      ),
                     ),
                     const Padding(
                       padding: EdgeInsets.all(10),
@@ -102,24 +164,51 @@ class _OnboardingScreen1State extends State<OnboardingScreen1> {
                       ),
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const SizedBox(
-                          width: 150,
+                        Visibility(
+                          maintainState: true,
+                          maintainSize: true,
+                          maintainAnimation: true,
+                          visible: currentPage == 0 ? false : true,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  shape: const CircleBorder(),
+                                  side: const BorderSide(
+                                      color: Colors.brown,
+                                      style: BorderStyle.solid)),
+                              onPressed:
+                                  currentPage == 0 ? null : _goToPreviousPage,
+                              child: const Icon(
+                                Icons.arrow_back,
+                                color: Colors.brown,
+                              )),
                         ),
+                        // const SizedBox(
+                        //   width: 150,
+                        // ),
                         SmoothPageIndicator(
                           controller: _controller,
                           count: 3,
                           effect:
                               const WormEffect(activeDotColor: Colors.brown),
                         ),
-                        const SizedBox(
-                          width: 70,
-                        ),
+                        // const SizedBox(
+                        //   width: 70,
+                        // ),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                shape: const CircleBorder()),
+                                backgroundColor: Colors.brown,
+                                shape: const CircleBorder(),
+                                side: const BorderSide(
+                                    style: BorderStyle.solid,
+                                    color: Colors.brown)),
                             onPressed: _goToNextPage,
-                            child: const Icon(Icons.arrow_forward)),
+                            child: const Icon(
+                              Icons.arrow_forward,
+                              color: Colors.white,
+                            )),
                       ],
                     )
                   ],
