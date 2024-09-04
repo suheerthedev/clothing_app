@@ -11,8 +11,8 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   TextEditingController emailCont = TextEditingController();
-  bool passwordStatus = false;
-  FaIcon passwordIcon = const FaIcon(FontAwesomeIcons.solidEye);
+  bool passwordStatus = true;
+  FaIcon passwordIcon = const FaIcon(FontAwesomeIcons.solidEyeSlash);
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -69,11 +69,11 @@ class _SignInScreenState extends State<SignInScreen> {
                       hintStyle: const TextStyle(color: Colors.grey),
                       suffixIcon: IconButton(
                         onPressed: () {
-                          if (passwordStatus == false) {
+                          if (passwordStatus == true) {
                             setState(() {
                               passwordStatus = !passwordStatus;
                               passwordIcon = const FaIcon(
-                                FontAwesomeIcons.solidEyeSlash,
+                                FontAwesomeIcons.solidEye,
                                 size: 15,
                               );
                             });
@@ -81,7 +81,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             setState(() {
                               passwordStatus = !passwordStatus;
                               passwordIcon =
-                                  const FaIcon(FontAwesomeIcons.solidEye);
+                                  const FaIcon(FontAwesomeIcons.solidEyeSlash);
                             });
                           }
                         },
