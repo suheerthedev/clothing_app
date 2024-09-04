@@ -40,8 +40,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 80,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   controller: emailCont,
                   decoration: InputDecoration(
@@ -58,8 +58,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 25,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   obscureText: passwordStatus,
                   decoration: InputDecoration(

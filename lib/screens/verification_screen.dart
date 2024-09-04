@@ -84,7 +84,7 @@ class VerificationScreen extends StatelessWidget {
                   backgroundColor: Colors.brown),
               onPressed: () {
                 //Navigate to Other Screen
-                Navigator.pushNamed(context, 'changepasswordscreen');
+                Navigator.pushNamed(context, '/changepasswordscreen');
               },
               child: const Text(
                 'Verify',

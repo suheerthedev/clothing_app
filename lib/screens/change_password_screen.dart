@@ -62,8 +62,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           Column(
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   obscureText: passwordStatus,
                   decoration: InputDecoration(
@@ -101,8 +101,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 height: 25,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   obscureText: confirmPasswordStatus,
                   decoration: InputDecoration(

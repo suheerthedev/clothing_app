@@ -40,8 +40,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 height: 30,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   decoration: InputDecoration(
                       labelText: 'Name',
@@ -57,8 +57,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 height: 25,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   decoration: InputDecoration(
                       labelText: 'Email',
@@ -74,8 +74,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 height: 25,
               ),
               Padding(
-                padding:
-                    const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
+                padding: const EdgeInsets.only(
+                    top: 8, left: 16, right: 16, bottom: 0),
                 child: TextField(
                   obscureText: passwordStatus,
                   decoration: InputDecoration(
