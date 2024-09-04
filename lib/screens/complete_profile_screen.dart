@@ -129,9 +129,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 'Complete Profile',
                 style: TextStyle(color: Colors.white),
               )),
-          SizedBox(
+          const SizedBox(
             height: 150,
-          )
+          ),
         ],
       ),
     );

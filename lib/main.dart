@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),
-      home: const CompleteProfileScreen(),
+      home: const SplashScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),
