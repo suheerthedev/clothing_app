@@ -41,17 +41,6 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
       body: SafeArea(
         child: Stack(
           children: [
-            Positioned(
-                right: 20,
-                top: 10,
-                child: InkWell(
-                  onTap: _goToSignInScreen,
-                  child: const Text('Skip',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.brown,
-                          fontWeight: FontWeight.w500)),
-                )),
             PageView(
                 onPageChanged: (index) {
                   setState(() {
@@ -64,6 +53,17 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                   Image.asset('assets/images/iphone.png'),
                   Image.asset('assets/images/iphone.png'),
                 ]),
+            Positioned(
+                right: 20,
+                top: 18,
+                child: InkWell(
+                  onTap: _goToSignInScreen,
+                  child: const Text('Skip',
+                      style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.brown,
+                          fontWeight: FontWeight.w500)),
+                )),
             Positioned(
               top: 510,
               bottom: 0,

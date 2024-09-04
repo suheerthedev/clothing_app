@@ -1,3 +1,4 @@
+import 'package:clothing_store_app/screens/verification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,6 +10,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  TextEditingController emailCont = TextEditingController();
   bool passwordStatus = false;
   FaIcon passwordIcon = const FaIcon(FontAwesomeIcons.solidEye);
   @override
@@ -41,6 +43,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 padding:
                     const EdgeInsets.only(top: 8, left: 8, right: 8, bottom: 0),
                 child: TextField(
+                  controller: emailCont,
                   decoration: InputDecoration(
                       labelText: 'Email',
                       floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -99,6 +102,13 @@ class _SignInScreenState extends State<SignInScreen> {
                   InkWell(
                     onTap: () {
                       //Navigate to verfication page
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VerificationScreen(
+                              enteredEmail: emailCont.text.toString(),
+                            ),
+                          ));
                     },
                     child: const Text(
                       "Forgot Password?",
@@ -120,7 +130,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(350, 50),
+                      fixedSize: const Size(330, 50),
                       backgroundColor: Colors.brown),
                   onPressed: () {
                     //Navigate to Other Screen

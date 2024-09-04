@@ -2,6 +2,7 @@ import 'package:clothing_store_app/screens/create_account_screen.dart';
 import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
 import 'package:clothing_store_app/screens/sign_in_screen.dart';
 import 'package:clothing_store_app/screens/splash_screen.dart';
+import 'package:clothing_store_app/screens/verification_screen.dart';
 import 'package:clothing_store_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Clothing App',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Montserrat',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
       ),

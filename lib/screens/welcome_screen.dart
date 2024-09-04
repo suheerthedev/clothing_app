@@ -21,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Container(
                     width: 160,
                     height: 400,
-                    color: Colors.brown,
+                    color: Colors.white,
                     child: Image.asset('assets/images/image2.png'),
                   ),
                 ),
@@ -34,7 +34,7 @@ class WelcomeScreen extends StatelessWidget {
                       child: Container(
                         width: 140,
                         height: 250,
-                        color: Colors.brown,
+                        color: Colors.white,
                         child: Image.asset('assets/images/image4.png'),
                       ),
                     ),
@@ -46,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                       child: Container(
                         width: 140,
                         height: 140,
-                        color: Colors.brown,
+                        color: Colors.white,
                         child: Image.asset('assets/images/image1.png'),
                       ),
                     ),

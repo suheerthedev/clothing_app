@@ -28,9 +28,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               const Text('Create Account',
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-              const SizedBox(
-                height: 5,
-              ),
               const Padding(
                 padding: EdgeInsets.only(left: 40, right: 40),
                 child: Text(
@@ -40,7 +37,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                 ),
               ),
               const SizedBox(
-                height: 60,
+                height: 30,
               ),
               Padding(
                 padding:
@@ -50,7 +47,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       labelText: 'Name',
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       hintText: 'Enter Your Name',
-                      hintStyle: TextStyle(color: Colors.grey),
+                      hintStyle: const TextStyle(color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
                       )),
@@ -67,7 +64,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       labelText: 'Email',
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       hintText: 'Enter Your Email',
-                      hintStyle: TextStyle(color: Colors.grey),
+                      hintStyle: const TextStyle(color: Colors.grey),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
                       )),
@@ -154,7 +151,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(350, 50),
+                      fixedSize: const Size(330, 50),
                       backgroundColor: Colors.brown),
                   onPressed: () {
                     //Navigate to Other Screen
