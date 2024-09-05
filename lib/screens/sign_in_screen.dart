@@ -1,5 +1,7 @@
 import 'package:clothing_store_app/screens/verification_screen.dart';
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/widgets/custom_elevated_button.dart';
+import 'package:clothing_store_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -12,6 +14,7 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   TextEditingController emailCont = TextEditingController();
+  TextEditingController passCont = TextEditingController();
   bool passwordStatus = true;
   FaIcon passwordIcon = const FaIcon(FontAwesomeIcons.solidEyeSlash);
   @override
@@ -47,64 +50,50 @@ class _SignInScreenState extends State<SignInScreen> {
                 height: 80,
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 8, left: 16, right: 16, bottom: 0),
-                child: TextField(
-                  controller: emailCont,
-                  decoration: InputDecoration(
-                      labelText: 'Email',
-                      labelStyle: TextStyle(color: AppColors.primaryTextColor),
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: 'Enter Your Email',
-                      hintStyle: const TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: AppColors.primaryColor),
-                        borderRadius: BorderRadius.circular(25),
-                      )),
-                ),
-              ),
+                  padding: const EdgeInsets.only(
+                      top: 8, left: 16, right: 16, bottom: 0),
+                  child: CustomTextField(
+                    controller: emailCont,
+                    labelText: 'Email',
+                    hintText: 'Enter Your Email',
+                    obscureText: false,
+                  )),
               const SizedBox(
                 height: 25,
               ),
               Padding(
                 padding: const EdgeInsets.only(
                     top: 8, left: 16, right: 16, bottom: 0),
-                child: TextField(
+                child: CustomTextField(
+                  controller: passCont,
+                  labelText: 'Password',
+                  hintText: 'Enter Your Password',
                   obscureText: passwordStatus,
-                  decoration: InputDecoration(
-                      labelText: 'Password',
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: 'Enter Your Password',
-                      hintStyle: const TextStyle(color: Colors.grey),
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          if (passwordStatus == true) {
-                            setState(() {
-                              passwordStatus = !passwordStatus;
-                              passwordIcon = FaIcon(
-                                FontAwesomeIcons.solidEye,
-                                color: AppColors.primaryIconColor,
-                                size: 15,
-                              );
-                            });
-                          } else {
-                            setState(() {
-                              passwordStatus = !passwordStatus;
-                              passwordIcon = FaIcon(
-                                FontAwesomeIcons.solidEyeSlash,
-                                color: AppColors.primaryIconColor,
-                              );
-                            });
-                          }
-                        },
-                        icon: passwordIcon,
-                        color: AppColors.primaryIconColor,
-                        iconSize: 15,
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide(color: AppColors.primaryColor),
-                      )),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      if (passwordStatus == true) {
+                        setState(() {
+                          passwordStatus = !passwordStatus;
+                          passwordIcon = FaIcon(
+                            FontAwesomeIcons.solidEye,
+                            color: AppColors.primaryIconColor,
+                            size: 15,
+                          );
+                        });
+                      } else {
+                        setState(() {
+                          passwordStatus = !passwordStatus;
+                          passwordIcon = FaIcon(
+                            FontAwesomeIcons.solidEyeSlash,
+                            size: 15,
+                            color: AppColors.primaryIconColor,
+                          );
+                        });
+                      }
+                    },
+                    icon: passwordIcon,
+                    iconSize: 15,
+                  ),
                 ),
               ),
               const SizedBox(
@@ -142,17 +131,7 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(330, 50),
-                      backgroundColor: AppColors.secondaryColor),
-                  onPressed: () {
-                    //Navigate to Other Screen
-                  },
-                  child: Text(
-                    'Sign In',
-                    style: TextStyle(color: AppColors.onPrimaryTextColor),
-                  )),
+              const CustomElevatedButton(btnText: 'Sign In'),
               const SizedBox(
                 height: 40,
               ),
