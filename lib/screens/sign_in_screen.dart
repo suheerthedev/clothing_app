@@ -1,7 +1,10 @@
 import 'package:clothing_store_app/screens/verification_screen.dart';
 import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:clothing_store_app/widgets/custom_elevated_button.dart';
+import 'package:clothing_store_app/widgets/custom_screen_heading.dart';
+import 'package:clothing_store_app/widgets/custom_sign_in_and_up_text.dart';
 import 'package:clothing_store_app/widgets/custom_text_field.dart';
+import 'package:clothing_store_app/widgets/social_sign_in_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -26,26 +29,13 @@ class _SignInScreenState extends State<SignInScreen> {
       body: SafeArea(
         child: Center(
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const SizedBox(
                 height: 120,
               ),
-              Text('Sign In',
-                  style: TextStyle(
-                      color: AppColors.primaryTextColor,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold)),
-              const SizedBox(
-                height: 5,
-              ),
-              Text(
-                "Hi! Welcome back, you've been missed.",
-                style: TextStyle(
-                    color: AppColors.primaryTextColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400),
-              ),
+              const CustomScreenHeading(
+                  mainHeading: 'Sign In',
+                  subHeading: "Hi! Welcome back you've been missed."),
               const SizedBox(
                 height: 80,
               ),
@@ -54,9 +44,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       top: 8, left: 16, right: 16, bottom: 0),
                   child: CustomTextField(
                     controller: emailCont,
+                    obscureText: false,
                     labelText: 'Email',
                     hintText: 'Enter Your Email',
-                    obscureText: false,
                   )),
               const SizedBox(
                 height: 25,
@@ -165,50 +155,17 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(
                 height: 40,
               ),
-              SizedBox(
-                width: size.width * 0.5,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CircleAvatar(
-                      child: FaIcon(FontAwesomeIcons.apple,
-                          color: AppColors.primaryIconColor),
-                    ),
-                    CircleAvatar(
-                      child: FaIcon(FontAwesomeIcons.google,
-                          color: AppColors.primaryIconColor),
-                    ),
-                    CircleAvatar(
-                      child: FaIcon(FontAwesomeIcons.facebook,
-                          color: AppColors.primaryIconColor),
-                    )
-                  ],
-                ),
-              ),
+              SocialSignInButtons(width: size.width * 0.5),
               const SizedBox(
                 height: 40,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Don't have an account?",
-                      style: TextStyle(
-                          color: AppColors.primaryTextColor,
-                          fontWeight: FontWeight.w400)),
-                  InkWell(
-                    onTap: () {
-                      //Navigate To Create Account Page
-                      Navigator.pushNamed(context, '/createaccountscreen');
-                    },
-                    child: Text(" Sign Up",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.secondaryTextColor,
-                            decoration: TextDecoration.underline,
-                            decorationColor: AppColors.secondaryTextColor)),
-                  )
-                ],
-              )
+              CustomSignInAndUpText(
+                  onTap: () {
+                    //Navigate To Create Account Page
+                    Navigator.pushNamed(context, '/createaccountscreen');
+                  },
+                  mainText: "Don't have an account? ",
+                  clickableText: 'Sign Up')
             ],
           ),
         ),

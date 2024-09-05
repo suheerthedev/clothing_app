@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/widgets/custom_sign_in_and_up_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -117,26 +118,13 @@ class WelcomeScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Already have an account? ',
-                  style: TextStyle(
-                      color: AppColors.primaryTextColor,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500)),
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, '/signinscreen');
-                },
-                child: Text('Sign In',
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        decoration: TextDecoration.underline,
-                        color: AppColors.secondaryTextColor)),
-              )
-            ],
+          CustomSignInAndUpText(
+            onTap: () {
+              //Navigate To Create Account Page
+              Navigator.pushNamed(context, '/signinscreen');
+            },
+            mainText: 'Already have an account? ',
+            clickableText: 'Sign In',
           ),
         ],
       ),
