@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/screens/verification_screen.dart';
+import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -27,14 +28,20 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(
                 height: 120,
               ),
-              const Text('Sign In',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
+              Text('Sign In',
+                  style: TextStyle(
+                      color: AppColors.primaryTextColor,
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold)),
               const SizedBox(
                 height: 5,
               ),
-              const Text(
+              Text(
                 "Hi! Welcome back, you've been missed.",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                style: TextStyle(
+                    color: AppColors.primaryTextColor,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400),
               ),
               const SizedBox(
                 height: 80,
@@ -46,10 +53,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   controller: emailCont,
                   decoration: InputDecoration(
                       labelText: 'Email',
+                      labelStyle: TextStyle(color: AppColors.primaryTextColor),
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       hintText: 'Enter Your Email',
                       hintStyle: const TextStyle(color: Colors.grey),
                       border: OutlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.primaryColor),
                         borderRadius: BorderRadius.circular(25),
                       )),
                 ),
@@ -72,24 +81,29 @@ class _SignInScreenState extends State<SignInScreen> {
                           if (passwordStatus == true) {
                             setState(() {
                               passwordStatus = !passwordStatus;
-                              passwordIcon = const FaIcon(
+                              passwordIcon = FaIcon(
                                 FontAwesomeIcons.solidEye,
+                                color: AppColors.primaryIconColor,
                                 size: 15,
                               );
                             });
                           } else {
                             setState(() {
                               passwordStatus = !passwordStatus;
-                              passwordIcon =
-                                  const FaIcon(FontAwesomeIcons.solidEyeSlash);
+                              passwordIcon = FaIcon(
+                                FontAwesomeIcons.solidEyeSlash,
+                                color: AppColors.primaryIconColor,
+                              );
                             });
                           }
                         },
                         icon: passwordIcon,
+                        color: AppColors.primaryIconColor,
                         iconSize: 15,
                       ),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25),
+                        borderSide: BorderSide(color: AppColors.primaryColor),
                       )),
                 ),
               ),
@@ -110,18 +124,18 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                           ));
                     },
-                    child: const Text(
+                    child: Text(
                       "Forgot Password?",
                       style: TextStyle(
                           fontSize: 13,
-                          color: Colors.brown,
+                          color: AppColors.secondaryTextColor,
                           fontWeight: FontWeight.w500,
                           decoration: TextDecoration.underline,
-                          decorationColor: Colors.brown),
+                          decorationColor: AppColors.secondaryTextColor),
                     ),
                   ),
                   const SizedBox(
-                    width: 10,
+                    width: 17,
                   ),
                 ],
               ),
@@ -131,13 +145,13 @@ class _SignInScreenState extends State<SignInScreen> {
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       fixedSize: const Size(330, 50),
-                      backgroundColor: Colors.brown),
+                      backgroundColor: AppColors.secondaryColor),
                   onPressed: () {
                     //Navigate to Other Screen
                   },
-                  child: const Text(
+                  child: Text(
                     'Sign In',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: AppColors.onPrimaryTextColor),
                   )),
               const SizedBox(
                 height: 40,
@@ -151,10 +165,11 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: Divider(
                       color: Color.fromARGB(244, 158, 158, 158),
                       thickness: 1,
+                      indent: 10,
                       endIndent: 10,
                     )),
                     Text(
-                      'Or sign in with  ',
+                      'Or sign in with',
                       style:
                           TextStyle(color: Color.fromARGB(244, 158, 158, 158)),
                     ),
@@ -162,6 +177,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         child: Divider(
                       color: Color.fromARGB(244, 158, 158, 158),
                       thickness: 1,
+                      indent: 10,
                       endIndent: 10,
                     )),
                   ],
@@ -172,17 +188,20 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               SizedBox(
                 width: size.width * 0.5,
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     CircleAvatar(
-                      child: FaIcon(FontAwesomeIcons.apple),
+                      child: FaIcon(FontAwesomeIcons.apple,
+                          color: AppColors.primaryIconColor),
                     ),
                     CircleAvatar(
-                      child: FaIcon(FontAwesomeIcons.google),
+                      child: FaIcon(FontAwesomeIcons.google,
+                          color: AppColors.primaryIconColor),
                     ),
                     CircleAvatar(
-                      child: FaIcon(FontAwesomeIcons.facebook),
+                      child: FaIcon(FontAwesomeIcons.facebook,
+                          color: AppColors.primaryIconColor),
                     )
                   ],
                 ),
@@ -193,19 +212,21 @@ class _SignInScreenState extends State<SignInScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?",
-                      style: TextStyle(fontWeight: FontWeight.w400)),
+                  Text("Don't have an account?",
+                      style: TextStyle(
+                          color: AppColors.primaryTextColor,
+                          fontWeight: FontWeight.w400)),
                   InkWell(
                     onTap: () {
                       //Navigate To Create Account Page
                       Navigator.pushNamed(context, '/createaccountscreen');
                     },
-                    child: const Text(" Sign Up",
+                    child: Text(" Sign Up",
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
-                            color: Colors.brown,
+                            color: AppColors.secondaryTextColor,
                             decoration: TextDecoration.underline,
-                            decorationColor: Colors.brown)),
+                            decorationColor: AppColors.secondaryTextColor)),
                   )
                 ],
               )
