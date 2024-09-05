@@ -1,4 +1,9 @@
+import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/widgets/custom_back_button.dart';
+import 'package:clothing_store_app/widgets/custom_screen_heading.dart';
+import 'package:clothing_store_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
@@ -9,73 +14,47 @@ class CompleteProfileScreen extends StatefulWidget {
 }
 
 class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
+  TextEditingController nameCont = TextEditingController();
   final List<String> genderOptions = ['Male', 'Female', 'Pakistani', 'Other'];
+
   String? selectedGender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Container(
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.black, width: 0.5)),
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: IconButton(
-                  onPressed: () {
-                    //Navigate to previous screen
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                  )),
-            ),
-          ),
-        ),
+        backgroundColor: AppColors.backgroundColor,
+        leading: const CustomBackButton(),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           //Title and Subtitle Here
-          const Column(
-            children: [
-              Text('Complete Your Profile',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-              Padding(
-                padding: EdgeInsets.only(left: 40, right: 40),
-                child: Text(
-                  "Don't worry only you can see your personal data. No one else will be able to see it.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-                ),
-              ),
-            ],
-          ),
+          const CustomScreenHeading(
+              mainHeading: "Complete Your Profile",
+              subHeading:
+                  "Don't worry only you can see your personal data. No one else will be able to see it."),
+
           //Profile Avatar here
-          // CircleAvatar(
-          //   child: ,
-          // ),
+          SizedBox.square(
+            dimension: 120,
+            child: CircleAvatar(
+              child: SvgPicture.asset('assets/images/profileicon.svg'),
+            ),
+          ),
           //TextFields From Here
           Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(
-                    top: 8, left: 16, right: 16, bottom: 0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      labelText: 'Name',
-                      floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: 'John Doe',
-                      hintStyle: const TextStyle(color: Colors.grey),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                      )),
-                ),
+                  padding: const EdgeInsets.only(
+                      top: 8, left: 16, right: 16, bottom: 0),
+                  child: CustomTextField(
+                      controller: nameCont,
+                      labelText: "Name",
+                      hintText: "John Doe",
+                      obscureText: false)),
+              const SizedBox(
+                height: 15,
               ),
               Padding(
                 padding: const EdgeInsets.only(
@@ -118,19 +97,20 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   ))
             ],
           ),
+
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   fixedSize: const Size(340, 50),
-                  backgroundColor: Colors.brown),
+                  backgroundColor: AppColors.secondaryColor),
               onPressed: () {
                 //Navigate to Other Screen
               },
-              child: const Text(
+              child: Text(
                 'Complete Profile',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: AppColors.onPrimaryTextColor),
               )),
           const SizedBox(
-            height: 150,
+            height: 50,
           ),
         ],
       ),

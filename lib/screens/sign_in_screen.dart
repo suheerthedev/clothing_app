@@ -121,7 +121,13 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const CustomElevatedButton(btnText: 'Sign In'),
+              CustomElevatedButton(
+                btnText: 'Sign In',
+                onPressed: () {
+                  //Navigate to other screen
+                  Navigator.pushNamed(context, '/completeprofilescreen');
+                },
+              ),
               const SizedBox(
                 height: 40,
               ),

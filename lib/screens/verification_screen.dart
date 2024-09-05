@@ -1,3 +1,6 @@
+import 'package:clothing_store_app/widgets/custom_back_button.dart';
+import 'package:clothing_store_app/widgets/custom_elevated_button.dart';
+import 'package:clothing_store_app/widgets/custom_screen_heading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
@@ -11,48 +14,15 @@ class VerificationScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Container(
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.black, width: 0.5)),
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-              child: IconButton(
-                  onPressed: () {
-                    //Navigate to previous screen
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                  )),
-            ),
-          ),
-        ),
+        leading: const CustomBackButton(),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Column(
-            children: [
-              const SizedBox(
-                height: 30,
-              ),
-              const Text('Verify Code',
-                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-              Padding(
-                padding: const EdgeInsets.only(left: 40, right: 40),
-                child: Text(
-                  "Please enter the code we just sent to ${enteredEmail ?? "@gmail.com"}",
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: 12, fontWeight: FontWeight.w400),
-                ),
-              ),
-            ],
-          ),
+          CustomScreenHeading(
+              mainHeading: "Verify Code",
+              subHeading:
+                  "Please enter the code we just sent to ${enteredEmail ?? "@gmail.com"}"),
           OtpTextField(
             borderRadius: BorderRadius.circular(50),
             margin: const EdgeInsets.all(10),
@@ -78,18 +48,12 @@ class VerificationScreen extends StatelessWidget {
                       decoration: TextDecoration.underline)),
             ],
           ),
-          ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(330, 50),
-                  backgroundColor: Colors.brown),
+          CustomElevatedButton(
+              btnText: 'Verify',
               onPressed: () {
                 //Navigate to Other Screen
                 Navigator.pushNamed(context, '/changepasswordscreen');
-              },
-              child: const Text(
-                'Verify',
-                style: TextStyle(color: Colors.white),
-              )),
+              }),
           const SizedBox(
             height: 300,
           )
