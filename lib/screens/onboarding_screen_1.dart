@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -49,9 +50,9 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                 },
                 controller: _controller,
                 children: [
-                  Center(child: Image.asset('assets/images/iphone.png')),
-                  Image.asset('assets/images/iphone.png'),
-                  Image.asset('assets/images/iphone.png'),
+                  Center(child: SvgPicture.asset('assets/images/iphone.svg')),
+                  SvgPicture.asset('assets/images/iphone.svg'),
+                  SvgPicture.asset('assets/images/iphone.svg'),
                 ]),
             Positioned(
                 right: 20,

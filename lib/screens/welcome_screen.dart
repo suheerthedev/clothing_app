@@ -1,4 +1,6 @@
+import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -22,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
                     width: 160,
                     height: 400,
                     color: Colors.white,
-                    child: Image.asset('assets/images/image2.png'),
+                    child: SvgPicture.asset('assets/images/boyimage1.svg'),
                   ),
                 ),
                 Column(
@@ -35,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                         width: 140,
                         height: 250,
                         color: Colors.white,
-                        child: Image.asset('assets/images/image4.png'),
+                        child: SvgPicture.asset('assets/images/girlimage2.svg'),
                       ),
                     ),
                     const SizedBox(
@@ -47,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                         width: 140,
                         height: 140,
                         color: Colors.white,
-                        child: Image.asset('assets/images/image1.png'),
+                        child: SvgPicture.asset('assets/images/girlimage1.svg'),
                       ),
                     ),
                   ],
@@ -58,54 +60,59 @@ class WelcomeScreen extends StatelessWidget {
           const SizedBox(
             height: 25,
           ),
-          const Text.rich(
+          Text.rich(
             textAlign: TextAlign.center,
             TextSpan(
               children: [
                 TextSpan(
                     text: 'The ',
-                    style:
-                        TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                    style: TextStyle(
+                        color: AppColors.primaryTextColor,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold)),
                 TextSpan(
                     text: 'Fashion App',
                     style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 112, 79, 56))),
+                        color: AppColors.secondaryTextColor)),
                 TextSpan(
-                    text: ' That ',
-                    style:
-                        TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-                TextSpan(
-                    text: 'Makes You Look Your Best',
-                    style:
-                        TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                    text: ' That Makes You Look Your Best',
+                    style: TextStyle(
+                        color: AppColors.primaryTextColor,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold)),
               ],
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 15,
           ),
-          const Padding(
-            padding: EdgeInsets.all(10),
+          Padding(
+            padding: const EdgeInsets.all(10),
             child: Text(
               'Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt',
               textAlign: TextAlign.center,
+              style: TextStyle(color: AppColors.primaryTextColor),
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 25,
           ),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(300, 50),
-                  backgroundColor: const Color.fromARGB(255, 112, 79, 56)),
+                  backgroundColor: AppColors.primaryColor),
               onPressed: () {
-                Navigator.pushNamed(context, '/onboardingscreen1');
+                Navigator.pushNamed(
+                  context,
+                  '/onboardingscreen1',
+                );
               },
-              child: const Text(
+              child: Text(
                 "Let's Get Started",
-                style: TextStyle(color: Colors.white, fontSize: 16),
+                style: TextStyle(
+                    color: AppColors.onPrimaryTextColor, fontSize: 16),
               )),
           const SizedBox(
             height: 30,
@@ -113,18 +120,21 @@ class WelcomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Already have an account? ',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
+              Text('Already have an account? ',
+                  style: TextStyle(
+                      color: AppColors.primaryTextColor,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500)),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, '/signinscreen');
                 },
-                child: const Text('Sign In',
+                child: Text('Sign In',
                     style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                         decoration: TextDecoration.underline,
-                        color: Color.fromARGB(255, 112, 79, 56))),
+                        color: AppColors.secondaryTextColor)),
               )
             ],
           ),

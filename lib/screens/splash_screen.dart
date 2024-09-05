@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -32,14 +33,13 @@ class _SplashScreenState extends State<SplashScreen> {
               Positioned(
                 top: -screenHeight * 0.05,
                 right: -screenWidth * 0.1,
-                child: const Material(
+                child: Material(
                   elevation: 10,
-                  shape: CircleBorder(),
+                  shape: const CircleBorder(),
                   child: SizedBox.square(
                     dimension: 130,
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
+                      backgroundColor: AppColors.surfaceColor,
                     ),
                   ),
                 ),
@@ -53,15 +53,13 @@ class _SplashScreenState extends State<SplashScreen> {
               Positioned(
                 bottom: -screenHeight * 0.1,
                 left: -screenWidth * 0.1,
-                child: const Material(
+                child: Material(
                   elevation: 25,
-                  shadowColor: Colors.black,
-                  shape: CircleBorder(),
+                  shape: const CircleBorder(),
                   child: SizedBox.square(
                     dimension: 220,
                     child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
+                      backgroundColor: AppColors.surfaceColor,
                     ),
                   ),
                 ),
