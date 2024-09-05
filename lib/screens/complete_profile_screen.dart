@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/util/app_images.dart';
 import 'package:clothing_store_app/widgets/custom_back_button.dart';
 import 'package:clothing_store_app/widgets/custom_screen_heading.dart';
 import 'package:clothing_store_app/widgets/custom_text_field.dart';
@@ -39,7 +40,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
           SizedBox.square(
             dimension: 120,
             child: CircleAvatar(
-              child: SvgPicture.asset('assets/images/profileicon.svg'),
+              child: SvgPicture.asset(AppImages.profileImageIcon),
             ),
           ),
           //TextFields From Here

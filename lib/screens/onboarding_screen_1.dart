@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/util/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -51,9 +52,10 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                 },
                 controller: _controller,
                 children: [
-                  Center(child: SvgPicture.asset('assets/images/iphone.svg')),
-                  SvgPicture.asset('assets/images/iphone.svg'),
-                  SvgPicture.asset('assets/images/iphone.svg'),
+                  Center(
+                      child: SvgPicture.asset(AppImages.onboardingScreenImage)),
+                  SvgPicture.asset(AppImages.onboardingScreenImage),
+                  SvgPicture.asset(AppImages.onboardingScreenImage),
                 ]),
             Positioned(
                 right: 20,

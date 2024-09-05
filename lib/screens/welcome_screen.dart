@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/util/app_images.dart';
 import 'package:clothing_store_app/widgets/custom_sign_in_and_up_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
                     width: 160,
                     height: 400,
                     color: Colors.white,
-                    child: SvgPicture.asset('assets/images/boyimage1.svg'),
+                    child: SvgPicture.asset(AppImages.welcomeScreenImage1),
                   ),
                 ),
                 Column(
@@ -38,7 +39,7 @@ class WelcomeScreen extends StatelessWidget {
                         width: 140,
                         height: 250,
                         color: Colors.white,
-                        child: SvgPicture.asset('assets/images/girlimage2.svg'),
+                        child: SvgPicture.asset(AppImages.welcomeScreenImage3),
                       ),
                     ),
                     const SizedBox(
@@ -50,7 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                         width: 140,
                         height: 140,
                         color: Colors.white,
-                        child: SvgPicture.asset('assets/images/girlimage1.svg'),
+                        child: SvgPicture.asset(AppImages.welcomeScreenImage2),
                       ),
                     ),
                   ],
