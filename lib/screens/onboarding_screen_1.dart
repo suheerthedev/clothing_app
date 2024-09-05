@@ -1,3 +1,4 @@
+import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -59,10 +60,10 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                 top: 18,
                 child: InkWell(
                   onTap: _goToSignInScreen,
-                  child: const Text('Skip',
+                  child: Text('Skip',
                       style: TextStyle(
                           fontSize: 17,
-                          color: Colors.brown,
+                          color: AppColors.secondaryTextColor,
                           fontWeight: FontWeight.w500)),
                 )),
             Positioned(
@@ -73,16 +74,16 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
               child: Container(
                 width: 370,
                 height: 150,
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    boxShadow: [
+                decoration: BoxDecoration(
+                    color: AppColors.surfaceColor,
+                    boxShadow: const [
                       BoxShadow(
                           color: Colors.black,
                           offset: Offset(0, -2),
                           blurRadius: 50,
                           spreadRadius: 0.5)
                     ],
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topRight: Radius.circular(25),
                         topLeft: Radius.circular(25))),
                 child: Column(
@@ -100,19 +101,19 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                                       ? 'Wishlist: Where'
                                       : 'Swift ',
                               style: currentPage == 0
-                                  ? const TextStyle(
+                                  ? TextStyle(
                                       fontSize: 26,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.brown)
+                                      color: AppColors.secondaryTextColor)
                                   : currentPage == 1
-                                      ? const TextStyle(
+                                      ? TextStyle(
                                           fontSize: 26,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black)
-                                      : const TextStyle(
+                                          color: AppColors.primaryTextColor)
+                                      : TextStyle(
                                           fontSize: 26,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.brown)),
+                                          color: AppColors.secondaryTextColor)),
                           TextSpan(
                               text: currentPage == 0
                                   ? ' Shopping Experience'
@@ -120,19 +121,19 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                                       ? ' Fashion Dreams '
                                       : 'and ',
                               style: currentPage == 0
-                                  ? const TextStyle(
+                                  ? TextStyle(
                                       fontSize: 26,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.black)
+                                      color: AppColors.primaryTextColor)
                                   : currentPage == 1
-                                      ? const TextStyle(
+                                      ? TextStyle(
                                           fontSize: 26,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.brown)
-                                      : const TextStyle(
+                                          color: AppColors.secondaryTextColor)
+                                      : TextStyle(
                                           fontSize: 26,
                                           fontWeight: FontWeight.bold,
-                                          color: Colors.black)),
+                                          color: AppColors.primaryTextColor)),
                           TextSpan(
                               text: currentPage == 1
                                   ? 'Begin'
@@ -140,30 +141,32 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                                       ? 'Relaible'
                                       : null,
                               style: currentPage == 1
-                                  ? const TextStyle(
+                                  ? TextStyle(
                                       fontSize: 26,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.black)
-                                  : const TextStyle(
+                                      color: AppColors.primaryTextColor)
+                                  : TextStyle(
                                       fontSize: 26,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.brown)),
+                                      color: AppColors.secondaryTextColor)),
                           TextSpan(
                               text: currentPage == 2 ? ' Delivery' : null,
                               style: currentPage == 2
-                                  ? const TextStyle(
+                                  ? TextStyle(
                                       fontSize: 26,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.black)
+                                      color: AppColors.primaryTextColor)
                                   : null),
                         ]),
                       ),
                     ),
-                    const Padding(
-                      padding: EdgeInsets.all(10),
+                    Container(
+                      margin: const EdgeInsets.only(
+                          right: 10, left: 10, bottom: 0, top: 0),
                       child: Text(
                         'Lorem ipsum dolor sit amet, consectetur adispiscing elit, sed do eiusmod tempor incididunt',
                         textAlign: TextAlign.center,
+                        style: TextStyle(color: AppColors.primaryTextColor),
                       ),
                     ),
                     Row(
@@ -176,16 +179,16 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                           visible: currentPage == 0 ? false : true,
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
+                                  backgroundColor: AppColors.surfaceColor,
                                   shape: const CircleBorder(),
-                                  side: const BorderSide(
-                                      color: Colors.brown,
+                                  side: BorderSide(
+                                      color: AppColors.secondaryColor,
                                       style: BorderStyle.solid)),
                               onPressed:
                                   currentPage == 0 ? null : _goToPreviousPage,
-                              child: const Icon(
+                              child: Icon(
                                 Icons.arrow_back,
-                                color: Colors.brown,
+                                color: AppColors.secondaryIconColor,
                               )),
                         ),
                         // const SizedBox(
@@ -194,25 +197,25 @@ class _OnboardingScreen1State extends State<OnboardingScreen> {
                         SmoothPageIndicator(
                           controller: _controller,
                           count: 3,
-                          effect:
-                              const WormEffect(activeDotColor: Colors.brown),
+                          effect: WormEffect(
+                              activeDotColor: AppColors.secondaryColor),
                         ),
                         // const SizedBox(
                         //   width: 70,
                         // ),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.brown,
+                                backgroundColor: AppColors.secondaryColor,
                                 shape: const CircleBorder(),
-                                side: const BorderSide(
+                                side: BorderSide(
                                     style: BorderStyle.solid,
-                                    color: Colors.brown)),
+                                    color: AppColors.secondaryColor)),
                             onPressed: currentPage == 2
                                 ? _goToSignInScreen
                                 : _goToNextPage,
-                            child: const Icon(
+                            child: Icon(
                               Icons.arrow_forward,
-                              color: Colors.white,
+                              color: AppColors.onPrimaryIconColor,
                             )),
                       ],
                     )

@@ -102,7 +102,7 @@ class WelcomeScreen extends StatelessWidget {
           ElevatedButton(
               style: ElevatedButton.styleFrom(
                   minimumSize: const Size(300, 50),
-                  backgroundColor: AppColors.primaryColor),
+                  backgroundColor: AppColors.secondaryColor),
               onPressed: () {
                 Navigator.pushNamed(
                   context,
