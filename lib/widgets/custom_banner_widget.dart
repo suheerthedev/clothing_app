@@ -5,25 +5,24 @@ class CustomBannerWidget extends StatelessWidget {
   const CustomBannerWidget({
     super.key,
     required this.size,
+    required this.svgImageUrl,
   });
 
   final Size size;
+  final String svgImageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: size.width * 0.9, // Responsive width
-        height: size.height * 0.22,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-        child: ClipRRect(
-          borderRadius:
-              BorderRadius.circular(10.0), // Rounded edges for each banner
-          child: SvgPicture.asset(
-            'assets/images/promobanner1.svg',
-            fit: BoxFit.cover, // Fill the entire container
-          ),
+    return Container(
+      width: size.width * 0.9, // Responsive width
+      height: size.height * 0.22,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+      child: ClipRRect(
+        borderRadius:
+            BorderRadius.circular(10.0), // Rounded edges for each banner
+        child: SvgPicture.asset(
+          svgImageUrl,
+          fit: BoxFit.cover, // Fill the entire container
         ),
       ),
     );
