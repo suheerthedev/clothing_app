@@ -1,4 +1,4 @@
-import 'package:clothing_store_app/screens/verification_screen.dart';
+import 'package:clothing_store_app/screens/authentication_screens/verification_screen.dart';
 import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:clothing_store_app/widgets/custom_elevated_button.dart';
 import 'package:clothing_store_app/widgets/custom_screen_heading.dart';
