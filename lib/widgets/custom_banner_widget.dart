@@ -15,7 +15,7 @@ class CustomBannerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: size.width * 0.9, // Responsive width
-      height: size.height * 0.22,
+      height: size.height * 0.2,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
       child: ClipRRect(
         borderRadius:
