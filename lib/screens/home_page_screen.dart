@@ -4,6 +4,7 @@ import 'package:clothing_store_app/widgets/custom_app_bar_widget.dart';
 import 'package:clothing_store_app/widgets/custom_banner_widget.dart';
 import 'package:clothing_store_app/widgets/custom_navbar.dart';
 import 'package:clothing_store_app/widgets/custom_search_bar_widget.dart';
+import 'package:clothing_store_app/widgets/custom_section_heading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -23,6 +24,9 @@ class _HomePageScreenState extends State<HomePageScreen> {
     'assets/images/promobanner2.svg',
     'assets/images/promobanner3.svg',
   ];
+  // List categoryIcons = [
+  //   Icon(Icons.)
+  // ];
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
@@ -69,30 +73,39 @@ class _HomePageScreenState extends State<HomePageScreen> {
               },
             ),
           ),
-          CustomSectionHeadingWidget()
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                CustomSectionHeadingWidget(
+                    textColor: AppColors.primaryTextColor,
+                    showActionButton: true,
+                    title: "Category",
+                    buttonTitle: "See All",
+                    onPressed: () {}),
+                SizedBox(
+                  height: 56,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        width: 56,
+                        height: 56,
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(28)),
+                      );
+                    },
+                    itemCount: 6,
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
-    );
-  }
-}
-
-class CustomSectionHeadingWidget extends StatelessWidget {
-  const CustomSectionHeadingWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        const Text(
-          'Catergory',
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-        TextButton(onPressed: () {}, child: const Text("See All"))
-      ],
     );
   }
 }

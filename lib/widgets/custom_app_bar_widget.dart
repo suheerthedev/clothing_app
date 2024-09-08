@@ -46,9 +46,16 @@ class CustomAppBarWidget extends StatelessWidget {
               ],
             ),
             //Right Icon On AppBar
-            Icon(
-              Iconsax.shopping_bag,
-              color: AppColors.primaryIconColor,
+            Badge(
+              alignment: Alignment.topRight,
+              textColor: AppColors.onPrimaryTextColor,
+              label: Text('1'),
+              largeSize: 8,
+              smallSize: 0,
+              child: Icon(
+                Iconsax.shopping_bag,
+                color: AppColors.primaryIconColor,
+              ),
             )
           ],
         ),
