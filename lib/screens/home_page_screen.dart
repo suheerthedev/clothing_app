@@ -1,12 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/util/app_images.dart';
 import 'package:clothing_store_app/widgets/custom_app_bar_widget.dart';
 import 'package:clothing_store_app/widgets/custom_banner_widget.dart';
 import 'package:clothing_store_app/widgets/custom_category_slider.dart';
 import 'package:clothing_store_app/widgets/custom_navbar.dart';
 import 'package:clothing_store_app/widgets/custom_search_bar_widget.dart';
 import 'package:clothing_store_app/widgets/custom_section_heading_widget.dart';
+import 'package:clothing_store_app/widgets/custom_tabbar_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePageScreen extends StatefulWidget {
@@ -26,13 +30,22 @@ class _HomePageScreenState extends State<HomePageScreen> {
     'assets/images/promobanner3.svg',
   ];
 
-  List fliterList = ["All", "Newest", "Popular", "Man", "Women", "Kids"];
+  List filterList = ["All", "Newest", "Popular", "Men", "Women", "Kids"];
+
+  List productDetails = [
+    {
+      "imagePath": AppImages.productImage1,
+      'productTitle': "Brown Jacket",
+      "rating": "4.9",
+      "price": "\$83.97"
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
     return DefaultTabController(
-      length: fliterList.length,
+      length: filterList.length,
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
@@ -94,33 +107,84 @@ class _HomePageScreenState extends State<HomePageScreen> {
               ),
             ),
             //Category Slider Started
-
-            TabBar(
-                tabAlignment: TabAlignment.start,
-                isScrollable: true,
-                indicatorColor: AppColors.secondaryColor,
-                labelColor: AppColors.primaryColor,
-                padding: EdgeInsets.zero,
-                tabs: [
-                  Tab(
-                    child: Text(fliterList[0]),
+            //TabBar Started
+            CustomTabBarWidget(fliterList: filterList),
+            Container(
+              width: 200,
+              height: 210,
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.black,
+                        blurRadius: 50,
+                        offset: Offset(0, 2))
+                  ]),
+              child: Stack(
+                children: [
+                  Container(
+                    width: 200,
+                    height: 150,
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(25),
+                        child: SvgPicture.asset(
+                          AppImages.productImage1,
+                          fit: BoxFit.cover,
+                        )),
                   ),
-                  Tab(
-                    child: Text(fliterList[1]),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: AppColors.secondaryColor,
+                    ),
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: FaIcon(
+                          FontAwesomeIcons.heart,
+                          size: 15,
+                          color: AppColors.onPrimaryTextColor,
+                        )),
                   ),
-                  Tab(
-                    child: Text(fliterList[2]),
-                  ),
-                  Tab(
-                    child: Text(fliterList[3]),
-                  ),
-                  Tab(
-                    child: Text(fliterList[4]),
-                  ),
-                  Tab(
-                    child: Text(fliterList[5]),
-                  ),
-                ])
+                  Positioned(
+                    top: 155,
+                    left: 10,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Brown Jacket",
+                              style: TextStyle(
+                                  color: AppColors.onPrimaryTextColor,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            const SizedBox(width: 45),
+                            const FaIcon(FontAwesomeIcons.solidStar,
+                                size: 15, color: Color(0xfffcaf23)),
+                            const SizedBox(width: 5),
+                            Text(
+                              '4.9',
+                              style: TextStyle(
+                                  color: AppColors.onPrimaryTextColor,
+                                  fontWeight: FontWeight.w400),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "\$83.97",
+                          style: TextStyle(
+                              color: AppColors.onPrimaryTextColor,
+                              fontWeight: FontWeight.w500),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),
