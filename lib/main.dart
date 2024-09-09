@@ -7,6 +7,7 @@ import 'package:clothing_store_app/screens/authentication_screens/sign_in_screen
 import 'package:clothing_store_app/screens/splash_screen.dart';
 import 'package:clothing_store_app/screens/authentication_screens/verification_screen.dart';
 import 'package:clothing_store_app/screens/welcome_screen.dart';
+import 'package:clothing_store_app/screens/wishlist_screen.dart';
 import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
                   color: AppColors.primaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
-      home: const HomePageScreen(),
+      home: const WishlistScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),

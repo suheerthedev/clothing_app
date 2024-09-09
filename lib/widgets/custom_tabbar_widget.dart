@@ -12,30 +12,16 @@ class CustomTabBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TabBar(
-        tabAlignment: TabAlignment.start,
-        isScrollable: true,
-        indicatorColor: AppColors.secondaryColor,
-        labelColor: AppColors.primaryColor,
-        padding: EdgeInsets.zero,
-        tabs: [
-          Tab(
-            child: Text(fliterList[0]),
-          ),
-          Tab(
-            child: Text(fliterList[1]),
-          ),
-          Tab(
-            child: Text(fliterList[2]),
-          ),
-          Tab(
-            child: Text(fliterList[3]),
-          ),
-          Tab(
-            child: Text(fliterList[4]),
-          ),
-          Tab(
-            child: Text(fliterList[5]),
-          ),
-        ]);
+      tabAlignment: TabAlignment.start,
+      isScrollable: true,
+      indicatorColor: AppColors.secondaryColor,
+      labelColor: AppColors.primaryColor,
+      padding: EdgeInsets.zero,
+      tabs: fliterList
+          .asMap()
+          .entries
+          .map((entry) => Tab(child: Text(entry.value)))
+          .toList(),
+    );
   }
 }
