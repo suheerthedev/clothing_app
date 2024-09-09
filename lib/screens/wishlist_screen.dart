@@ -1,6 +1,3 @@
-import 'package:clothing_store_app/util/app_colors.dart';
-import 'package:clothing_store_app/widgets/custom_app_bar_widget.dart';
-import 'package:clothing_store_app/widgets/custom_back_button.dart';
 import 'package:clothing_store_app/widgets/custom_navbar.dart';
 import 'package:clothing_store_app/widgets/custom_product_grid_widget.dart';
 import 'package:clothing_store_app/widgets/custom_screen_app_bar.dart';

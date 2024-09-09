@@ -1,6 +1,7 @@
 import 'package:clothing_store_app/screens/authentication_screens/change_password_screen.dart';
 import 'package:clothing_store_app/screens/authentication_screens/complete_profile_screen.dart';
 import 'package:clothing_store_app/screens/authentication_screens/create_account_screen.dart';
+import 'package:clothing_store_app/screens/cart_screen.dart';
 import 'package:clothing_store_app/screens/home_page_screen.dart';
 import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
 import 'package:clothing_store_app/screens/authentication_screens/sign_in_screen.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
                   color: AppColors.primaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
-      home: const WishlistScreen(),
+      home: const SplashScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),
@@ -46,6 +47,9 @@ class MyApp extends StatelessWidget {
         '/verficationscreen': (context) => const VerificationScreen(),
         '/changepasswordscreen': (context) => const ChangePasswordScreen(),
         '/completeprofilescreen': (context) => const CompleteProfileScreen(),
+        '/homescreen': (context) => const HomePageScreen(),
+        '/wishlistscreen': (context) => const WishlistScreen(),
+        '/cartscreen': (context) => const CartScreen(),
       },
     );
   }

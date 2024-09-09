@@ -105,6 +105,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                   backgroundColor: AppColors.secondaryColor),
               onPressed: () {
                 //Navigate to Other Screen
+                Navigator.pushReplacementNamed(context, '/homescreen');
               },
               child: Text(
                 'Complete Profile',
