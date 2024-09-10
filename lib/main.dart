@@ -2,10 +2,12 @@ import 'package:clothing_store_app/screens/authentication_screens/change_passwor
 import 'package:clothing_store_app/screens/authentication_screens/complete_profile_screen.dart';
 import 'package:clothing_store_app/screens/authentication_screens/create_account_screen.dart';
 import 'package:clothing_store_app/screens/cart_screen.dart';
+import 'package:clothing_store_app/screens/chat_screen.dart';
 import 'package:clothing_store_app/screens/home_page_screen.dart';
 import 'package:clothing_store_app/screens/main_screen.dart';
 import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
 import 'package:clothing_store_app/screens/authentication_screens/sign_in_screen.dart';
+import 'package:clothing_store_app/screens/profile_screen.dart';
 import 'package:clothing_store_app/screens/splash_screen.dart';
 import 'package:clothing_store_app/screens/authentication_screens/verification_screen.dart';
 import 'package:clothing_store_app/screens/welcome_screen.dart';
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
                   color: AppColors.primaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
-      home: const MainScreen(),
+      home: const CartScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),
@@ -48,9 +50,12 @@ class MyApp extends StatelessWidget {
         '/verficationscreen': (context) => const VerificationScreen(),
         '/changepasswordscreen': (context) => const ChangePasswordScreen(),
         '/completeprofilescreen': (context) => const CompleteProfileScreen(),
+        '/mainscreen': (context) => const MainScreen(),
         '/homescreen': (context) => const HomePageScreen(),
         '/wishlistscreen': (context) => const WishlistScreen(),
         '/cartscreen': (context) => const CartScreen(),
+        '/chatscreen': (context) => const ChatScreen(),
+        '/profilescreen': (context) => const ProfileScreen(),
       },
     );
   }

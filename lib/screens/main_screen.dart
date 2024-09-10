@@ -33,7 +33,6 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         backgroundColor: AppColors.primaryColor,
