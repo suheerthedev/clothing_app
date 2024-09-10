@@ -36,68 +36,70 @@ class _MainScreenState extends State<MainScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(bottom: 16),
-        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.only(bottom: 10, right: 10, left: 10),
+        padding: const EdgeInsets.only(right: 20, left: 20, top: 12),
         width: size.width * 0.8,
-        height: 80,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
+          color: AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(50),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30),
-          child: BottomAppBar(
-            color: AppColors.primaryColor,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                  onPressed: () => _onItemTapped(0),
-                  icon: Icon(
-                    _currentIndex == 0 ? Iconsax.home_15 : Iconsax.home,
-                    color: _currentIndex == 0
-                        ? AppColors.secondaryColor
-                        : AppColors.onPrimaryIconColor,
-                  ),
+          child: NavigationBar(
+            height: 60,
+            backgroundColor: AppColors.primaryColor,
+            selectedIndex: _currentIndex,
+            onDestinationSelected: _onItemTapped,
+            indicatorColor: AppColors.surfaceColor, // Indicator color
+            destinations: [
+              NavigationDestination(
+                icon: Icon(
+                  _currentIndex == 0 ? Iconsax.home_15 : Iconsax.home,
+                  color: _currentIndex == 0
+                      ? AppColors.secondaryColor
+                      : AppColors.onPrimaryIconColor,
                 ),
-                IconButton(
-                    onPressed: () => _onItemTapped(1),
-                    icon: Icon(
-                      _currentIndex == 1
-                          ? Iconsax.shopping_bag5
-                          : Iconsax.shopping_bag,
-                      color: _currentIndex == 1
-                          ? AppColors.secondaryColor
-                          : AppColors.onPrimaryIconColor,
-                    )),
-                IconButton(
-                  onPressed: () => _onItemTapped(2),
-                  icon: Icon(
-                    _currentIndex == 2 ? Iconsax.heart5 : Iconsax.heart,
-                    color: _currentIndex == 2
-                        ? AppColors.secondaryColor
-                        : AppColors.onPrimaryIconColor,
-                  ),
+                label: '',
+              ),
+              NavigationDestination(
+                icon: Icon(
+                  _currentIndex == 1
+                      ? Iconsax.shopping_bag5
+                      : Iconsax.shopping_bag,
+                  color: _currentIndex == 1
+                      ? AppColors.secondaryColor
+                      : AppColors.onPrimaryIconColor,
                 ),
-                IconButton(
-                  onPressed: () => _onItemTapped(3),
-                  icon: Icon(
-                    _currentIndex == 3 ? Iconsax.message5 : Iconsax.message,
-                    color: _currentIndex == 3
-                        ? AppColors.secondaryColor
-                        : AppColors.onPrimaryIconColor,
-                  ),
+                label: '',
+              ),
+              NavigationDestination(
+                icon: Icon(
+                  _currentIndex == 2 ? Iconsax.heart5 : Iconsax.heart,
+                  color: _currentIndex == 2
+                      ? AppColors.secondaryColor
+                      : AppColors.onPrimaryIconColor,
                 ),
-                IconButton(
-                  onPressed: () => _onItemTapped(4),
-                  icon: Icon(
-                    Iconsax.user,
-                    color: _currentIndex == 4
-                        ? AppColors.secondaryColor
-                        : AppColors.onPrimaryIconColor,
-                  ),
+                label: '',
+              ),
+              NavigationDestination(
+                icon: Icon(
+                  _currentIndex == 3 ? Iconsax.message5 : Iconsax.message,
+                  color: _currentIndex == 3
+                      ? AppColors.secondaryColor
+                      : AppColors.onPrimaryIconColor,
                 ),
-              ],
-            ),
+                label: '',
+              ),
+              NavigationDestination(
+                icon: Icon(
+                  Iconsax.user,
+                  color: _currentIndex == 4
+                      ? AppColors.secondaryColor
+                      : AppColors.onPrimaryIconColor,
+                ),
+                label: '',
+              ),
+            ],
           ),
         ),
       ),
