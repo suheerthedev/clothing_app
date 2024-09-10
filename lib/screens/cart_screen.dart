@@ -1,5 +1,4 @@
 import 'package:clothing_store_app/util/app_images.dart';
-import 'package:clothing_store_app/widgets/custom_navbar.dart';
 import 'package:clothing_store_app/widgets/custom_screen_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -12,7 +11,6 @@ class CartScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: const CustomScreenAppBar(title: "My Cart"),
-      bottomNavigationBar: CustomNavbar(),
       body: Container(
         color: Colors.amber,
         height: size.height * 0.1,

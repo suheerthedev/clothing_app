@@ -3,6 +3,7 @@ import 'package:clothing_store_app/screens/authentication_screens/complete_profi
 import 'package:clothing_store_app/screens/authentication_screens/create_account_screen.dart';
 import 'package:clothing_store_app/screens/cart_screen.dart';
 import 'package:clothing_store_app/screens/home_page_screen.dart';
+import 'package:clothing_store_app/screens/main_screen.dart';
 import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
 import 'package:clothing_store_app/screens/authentication_screens/sign_in_screen.dart';
 import 'package:clothing_store_app/screens/splash_screen.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
                   color: AppColors.primaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
-      home: const SplashScreen(),
+      home: const MainScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),

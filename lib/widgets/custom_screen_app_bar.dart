@@ -1,5 +1,4 @@
 import 'package:clothing_store_app/util/app_colors.dart';
-import 'package:clothing_store_app/widgets/custom_back_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomScreenAppBar extends StatelessWidget
@@ -14,7 +13,6 @@ class CustomScreenAppBar extends StatelessWidget
       centerTitle: true,
       automaticallyImplyLeading: false,
       backgroundColor: AppColors.surfaceColor,
-      leading: const CustomBackButton(),
       title: Text(
         title,
         style: TextStyle(

@@ -1,4 +1,3 @@
-import 'package:clothing_store_app/widgets/custom_navbar.dart';
 import 'package:clothing_store_app/widgets/custom_product_grid_widget.dart';
 import 'package:clothing_store_app/widgets/custom_screen_app_bar.dart';
 import 'package:clothing_store_app/widgets/custom_tabbar_widget.dart';
@@ -24,7 +23,6 @@ class WishlistScreen extends StatelessWidget {
         appBar: const CustomScreenAppBar(
           title: "My Wishlist",
         ),
-        bottomNavigationBar: CustomNavbar(),
         body: SingleChildScrollView(
           child: Column(
             children: [
