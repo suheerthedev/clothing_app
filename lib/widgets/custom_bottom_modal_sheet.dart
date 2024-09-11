@@ -42,6 +42,7 @@ class _CustomBottomModalSheetState extends State<CustomBottomModalSheet> {
             child: HorizontalProductItem(
               product: widget.product,
               deleteFromCart: () {},
+              decrementDeleteFromCart: widget.removeProduct,
               isSlidable: false,
               hasPrefixIcon: false,
               hasIncrementAndDecrement: false,
@@ -65,7 +66,7 @@ class _CustomBottomModalSheetState extends State<CustomBottomModalSheet> {
               Expanded(
                 child: ElevatedButton(
                     onPressed: () {
-                      widget.removeProduct;
+                      widget.removeProduct();
                       Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(

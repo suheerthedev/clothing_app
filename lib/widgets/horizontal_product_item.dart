@@ -12,9 +12,11 @@ class HorizontalProductItem extends StatefulWidget {
       required this.deleteFromCart,
       required this.isSlidable,
       required this.hasPrefixIcon,
-      required this.hasIncrementAndDecrement});
+      required this.hasIncrementAndDecrement,
+      required this.decrementDeleteFromCart});
   final Map<String, dynamic> product;
   final Function deleteFromCart;
+  final Function decrementDeleteFromCart;
   final bool isSlidable;
   final bool hasPrefixIcon;
   final bool hasIncrementAndDecrement;
@@ -27,16 +29,12 @@ class _HorizontalProductItemState extends State<HorizontalProductItem> {
   int quantityOfProduct = 1;
   void _productDecrement() {
     if (quantityOfProduct == 1) {
-      showBottomSheet(
+      showModalBottomSheet(
         context: context,
         builder: (context) {
           return CustomBottomModalSheet(
             product: widget.product,
-            removeProduct: () {
-              setState(() {
-                widget.deleteFromCart;
-              });
-            },
+            removeProduct: widget.decrementDeleteFromCart,
           );
         },
       );

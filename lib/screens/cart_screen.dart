@@ -25,8 +25,8 @@ class _CartScreenState extends State<CartScreen> {
             CustomProductListview(),
             DraggableScrollableSheet(
                 snap: false,
-                initialChildSize: 0.45,
-                maxChildSize: 0.45,
+                initialChildSize: 0.5,
+                maxChildSize: 0.5,
                 minChildSize: 0.1,
                 builder:
                     (BuildContext context, ScrollController scrollController) {
