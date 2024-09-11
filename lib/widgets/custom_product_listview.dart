@@ -89,6 +89,7 @@ class _CustomProductListviewState extends State<CustomProductListview> {
                             deleteFromCart: () {},
                             isSlidable: false,
                             hasPrefixIcon: false,
+                            hasIncrementAndDecrement: false,
                           ),
                         ),
                         Row(
@@ -134,6 +135,7 @@ class _CustomProductListviewState extends State<CustomProductListview> {
             },
             isSlidable: true,
             hasPrefixIcon: true,
+            hasIncrementAndDecrement: true,
           );
         });
   }

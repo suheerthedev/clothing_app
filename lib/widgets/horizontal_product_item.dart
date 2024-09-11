@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/widgets/custom_bottom_modal_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:iconsax/iconsax.dart';
@@ -10,11 +11,13 @@ class HorizontalProductItem extends StatefulWidget {
       required this.product,
       required this.deleteFromCart,
       required this.isSlidable,
-      required this.hasPrefixIcon});
+      required this.hasPrefixIcon,
+      required this.hasIncrementAndDecrement});
   final Map<String, dynamic> product;
   final Function deleteFromCart;
   final bool isSlidable;
   final bool hasPrefixIcon;
+  final bool hasIncrementAndDecrement;
 
   @override
   State<HorizontalProductItem> createState() => _HorizontalProductItemState();
@@ -23,9 +26,25 @@ class HorizontalProductItem extends StatefulWidget {
 class _HorizontalProductItemState extends State<HorizontalProductItem> {
   int quantityOfProduct = 1;
   void _productDecrement() {
-    setState(() {
-      quantityOfProduct--;
-    });
+    if (quantityOfProduct == 1) {
+      showBottomSheet(
+        context: context,
+        builder: (context) {
+          return CustomBottomModalSheet(
+            product: widget.product,
+            removeProduct: () {
+              setState(() {
+                widget.deleteFromCart;
+              });
+            },
+          );
+        },
+      );
+    } else {
+      setState(() {
+        quantityOfProduct--;
+      });
+    }
   }
 
   void _productIncrement() {
@@ -106,44 +125,46 @@ class _HorizontalProductItemState extends State<HorizontalProductItem> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SizedBox.square(
-                            dimension: 20,
-                            child: FloatingActionButton(
-                              backgroundColor: AppColors.surfaceColor,
-                              shape: const CircleBorder(),
-                              mini: true,
-                              onPressed: _productDecrement,
-                              child: Icon(
-                                Iconsax.minus,
-                                color: AppColors.primaryIconColor,
-                                size: 20,
+                  widget.hasIncrementAndDecrement
+                      ? Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SizedBox.square(
+                                  dimension: 20,
+                                  child: FloatingActionButton(
+                                    backgroundColor: AppColors.surfaceColor,
+                                    shape: const CircleBorder(),
+                                    mini: true,
+                                    onPressed: _productDecrement,
+                                    child: Icon(
+                                      Iconsax.minus,
+                                      color: AppColors.primaryIconColor,
+                                      size: 20,
+                                    ),
+                                  )),
+                              Text(
+                                "$quantityOfProduct",
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.w400, fontSize: 17),
                               ),
-                            )),
-                        Text(
-                          "$quantityOfProduct",
-                          style: const TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 17),
-                        ),
-                        SizedBox.square(
-                            dimension: 20,
-                            child: FloatingActionButton(
-                              backgroundColor: AppColors.secondaryColor,
-                              shape: const CircleBorder(),
-                              mini: true,
-                              onPressed: _productIncrement,
-                              child: Icon(
-                                Iconsax.add,
-                                color: AppColors.onSecondaryIconColor,
-                                size: 20,
-                              ),
-                            )),
-                      ],
-                    ),
-                  ),
+                              SizedBox.square(
+                                  dimension: 20,
+                                  child: FloatingActionButton(
+                                    backgroundColor: AppColors.secondaryColor,
+                                    shape: const CircleBorder(),
+                                    mini: true,
+                                    onPressed: _productIncrement,
+                                    child: Icon(
+                                      Iconsax.add,
+                                      color: AppColors.onSecondaryIconColor,
+                                      size: 20,
+                                    ),
+                                  )),
+                            ],
+                          ),
+                        )
+                      : SizedBox(),
                 ],
               ),
             )
