@@ -6,9 +6,15 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 class HorizontalProductItem extends StatefulWidget {
   const HorizontalProductItem(
-      {super.key, required this.product, required this.deleteFromCart});
+      {super.key,
+      required this.product,
+      required this.deleteFromCart,
+      required this.isSlidable,
+      required this.hasPrefixIcon});
   final Map<String, dynamic> product;
-  final VoidCallback deleteFromCart;
+  final Function deleteFromCart;
+  final bool isSlidable;
+  final bool hasPrefixIcon;
 
   @override
   State<HorizontalProductItem> createState() => _HorizontalProductItemState();
@@ -33,20 +39,18 @@ class _HorizontalProductItemState extends State<HorizontalProductItem> {
     Size size = MediaQuery.of(context).size;
     return Slidable(
       key: ValueKey(widget.product['productTitle']),
-      endActionPane: ActionPane(
-          motion: const ScrollMotion(),
-          dismissible: DismissiblePane(onDismissed: widget.deleteFromCart),
-          children: [
-            SlidableAction(
-              onPressed: (context) {
-                widget.deleteFromCart();
-              },
-              backgroundColor: Colors.red,
-              foregroundColor: Colors.white,
-              icon: Icons.delete,
-              label: "Tap To Delete",
-            )
-          ]),
+      enabled: widget.isSlidable,
+      endActionPane: ActionPane(motion: const ScrollMotion(), children: [
+        SlidableAction(
+          onPressed: (context) {
+            widget.deleteFromCart();
+          },
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+          icon: Icons.delete,
+          label: "Tap To Delete",
+        )
+      ]),
       child: Container(
         // padding: EdgeInsets.all(8),
         margin: const EdgeInsets.symmetric(vertical: 15),
@@ -54,10 +58,12 @@ class _HorizontalProductItemState extends State<HorizontalProductItem> {
         width: size.width * 1,
         child: Row(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: Icon(Iconsax.menu),
-            ),
+            widget.hasPrefixIcon
+                ? const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 5),
+                    child: Icon(Iconsax.menu),
+                  )
+                : Padding(padding: EdgeInsets.all(0)),
             Container(
                 margin: const EdgeInsets.only(right: 5, left: 0),
                 height: 250,

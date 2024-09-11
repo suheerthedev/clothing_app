@@ -25,7 +25,7 @@ class _CartScreenState extends State<CartScreen> {
             CustomProductListview(),
             DraggableScrollableSheet(
                 snap: false,
-                initialChildSize: 0.4,
+                initialChildSize: 0.45,
                 maxChildSize: 0.45,
                 minChildSize: 0.1,
                 builder:
@@ -37,7 +37,7 @@ class _CartScreenState extends State<CartScreen> {
                         color: AppColors.surfaceColor,
                         borderRadius: const BorderRadius.vertical(
                             top: Radius.circular(20)),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.black,
                               blurRadius: 20,
