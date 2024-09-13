@@ -23,11 +23,13 @@ class ProfileScreen extends StatelessWidget {
 //               textAlign: TextAlign.center,
 //               style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
 //             ),
+ //Profile Image
             SizedBox.square(
               dimension: 120,
               child: CircleAvatar(
                 child: SvgPicture.asset(AppImages.profileImageIcon),
               ),
+             
             ),
           ],
         ),
