@@ -10,6 +10,7 @@ class CustomTextField extends StatelessWidget {
     required this.obscureText,
     this.suffixIcon,
     this.onSuffixIconPressed,
+    this.prefixIcon,
   });
   final TextEditingController controller;
   final String labelText;
@@ -17,6 +18,7 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final Widget? suffixIcon;
   final VoidCallback? onSuffixIconPressed;
+  final Icon? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class CustomTextField extends StatelessWidget {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         hintText: hintText,
         hintStyle: const TextStyle(color: Colors.grey),
+        prefixIcon: prefixIcon != null ? prefixIcon : null,
         border: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.primaryColor),
           borderRadius: BorderRadius.circular(25),
