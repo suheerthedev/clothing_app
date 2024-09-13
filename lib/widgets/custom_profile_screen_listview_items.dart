@@ -9,16 +9,13 @@ class CustomProfileScreenListviewItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-      tag: profileElement['heroTag'],
-      child: ListTile(
-        leading: profileElement['prefixIcon'],
-        title: Text(profileElement['title']),
-        trailing: profileElement['suffixIcon'],
-        onTap: () {
-          Navigator.pushNamed(context, profileElement['route']);
-        },
-      ),
+    return ListTile(
+      leading: profileElement['prefixIcon'],
+      title: Text(profileElement['title']),
+      trailing: profileElement['suffixIcon'],
+      onTap: () {
+        Navigator.pushNamed(context, profileElement['route']);
+      },
     );
   }
 }

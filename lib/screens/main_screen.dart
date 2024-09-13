@@ -88,11 +88,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
       ),
-      body: SafeArea(
-          child: IndexedStack(
-        index: _currentIndex,
-        children: _screens,
-      )),
+      body: _screens[_currentIndex],
     );
   }
 }
