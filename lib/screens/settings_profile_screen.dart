@@ -1,3 +1,5 @@
+import 'package:clothing_store_app/widgets/custom_app_bar_widget.dart';
+import 'package:clothing_store_app/widgets/custom_screen_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class SettingsProfileScreen extends StatelessWidget {
@@ -5,6 +7,6 @@ class SettingsProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold();
   }
 }

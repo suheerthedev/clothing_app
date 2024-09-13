@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomProfileScreenListviewItems extends StatelessWidget {
-  const CustomProfileScreenListviewItems({
+class CustomListviewItems extends StatelessWidget {
+  const CustomListviewItems({
     super.key,
     required this.profileElement,
   });

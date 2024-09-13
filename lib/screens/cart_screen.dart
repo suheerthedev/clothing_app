@@ -16,7 +16,10 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const CustomScreenAppBar(title: "My Cart"),
+      appBar: const CustomScreenAppBar(
+        title: "My Cart",
+        isLeading: false,
+      ),
       body: Container(
           width: double.infinity,
           height: double.infinity,

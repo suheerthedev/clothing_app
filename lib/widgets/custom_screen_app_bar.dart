@@ -4,15 +4,38 @@ import 'package:flutter/material.dart';
 class CustomScreenAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   final String title;
+  final bool isLeading;
 
-  const CustomScreenAppBar({super.key, required this.title});
+  const CustomScreenAppBar(
+      {super.key, required this.title, required this.isLeading});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      leadingWidth: 50,
       centerTitle: true,
       automaticallyImplyLeading: false,
       backgroundColor: AppColors.surfaceColor,
+      leading: isLeading
+          ? Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                      backgroundColor: AppColors.surfaceColor,
+                      shape: const CircleBorder(),
+                      side: BorderSide(
+                          color: AppColors.primaryColor,
+                          style: BorderStyle.solid)),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: AppColors.primaryIconColor,
+                  )),
+            )
+          : null,
       title: Text(
         title,
         style: TextStyle(

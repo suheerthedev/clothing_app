@@ -22,6 +22,7 @@ class WishlistScreen extends StatelessWidget {
       child: Scaffold(
         appBar: const CustomScreenAppBar(
           title: "My Wishlist",
+          isLeading: false,
         ),
         body: SingleChildScrollView(
           child: Column(

@@ -13,7 +13,10 @@ class ProfileScreen extends StatelessWidget {
     String userName = "Suheer Khan";
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const CustomScreenAppBar(title: 'Profile'),
+      appBar: const CustomScreenAppBar(
+        title: 'Profile',
+        isLeading: false,
+      ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
