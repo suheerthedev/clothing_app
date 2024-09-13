@@ -23,7 +23,7 @@ class SettingsScreen extends StatelessWidget {
       },
       {
         'prefixIcon': const Icon(Iconsax.profile_delete),
-        'title': 'Delet Account',
+        'title': 'Delete Account',
         'suffixIcon': const Icon(Iconsax.arrow_right_3),
         'route': '',
       },
