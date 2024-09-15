@@ -15,7 +15,6 @@ import 'package:clothing_store_app/screens/payment_method_screen.dart';
 import 'package:clothing_store_app/screens/privacy_policy_screen.dart';
 import 'package:clothing_store_app/screens/profile_details_screen.dart';
 import 'package:clothing_store_app/screens/profile_screen.dart';
-import 'package:clothing_store_app/screens/settings_profile_screen.dart';
 import 'package:clothing_store_app/screens/settings_screen.dart';
 import 'package:clothing_store_app/screens/splash_screen.dart';
 import 'package:clothing_store_app/screens/authentication_screens/verification_screen.dart';
@@ -65,7 +64,6 @@ class MyApp extends StatelessWidget {
         '/cartscreen': (context) => const CartScreen(),
         '/chatscreen': (context) => const ChatScreen(),
         '/profilescreen': (context) => const ProfileScreen(),
-        '/settings_profile_screen': (context) => const SettingsProfileScreen(),
         '/profile_details_screen': (context) => const ProfileDetailsScreen(),
         '/payment_method_screen': (context) => const PaymentMethodScreen(),
         '/my_orders_screen': (context) => const MyOrdersScreen(),
