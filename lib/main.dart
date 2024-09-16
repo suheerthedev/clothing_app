@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
                   color: AppColors.primaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
-      home: const SplashScreen(),
+      home: const MainScreen(),
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),
