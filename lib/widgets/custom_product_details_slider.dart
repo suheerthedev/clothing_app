@@ -8,7 +8,7 @@ class CustomProductDetailsSlider extends StatelessWidget {
       this.width,
       this.height,
       this.padding,
-      this.borderRadius = 25,
+      this.borderRadius = 15,
       required this.imagePath,
       this.fit = BoxFit.contain,
       required this.applyImageRadius});
@@ -28,7 +28,7 @@ class CustomProductDetailsSlider extends StatelessWidget {
         height: height,
         padding: padding,
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
+          border: Border.all(color: Colors.transparent),
           color: AppColors.surfaceColor,
           borderRadius: BorderRadius.circular(borderRadius),
         ),

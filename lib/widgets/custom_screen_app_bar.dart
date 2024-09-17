@@ -60,15 +60,24 @@ class _CustomScreenAppBarState extends State<CustomScreenAppBar> {
       ),
       actions: widget.isActionable
           ? [
-              IconButton(
-                onPressed: () {
-                  setState(() {
-                    isLiked = !isLiked;
-                  });
-                },
-                icon: Icon(isLiked ? Iconsax.heart5 : Iconsax.heart),
-                color:
-                    isLiked ? const Color(0xff704f38) : AppColors.surfaceColor,
+              Container(
+                margin: EdgeInsetsDirectional.symmetric(horizontal: 5),
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                    color: AppColors.surfaceColor,
+                    borderRadius: BorderRadius.circular(25)),
+                child: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isLiked = !isLiked;
+                    });
+                  },
+                  icon: Icon(isLiked ? Iconsax.heart5 : Iconsax.heart),
+                  color: isLiked
+                      ? const Color(0xff704f38)
+                      : const Color(0xff704f38),
+                ),
               ),
             ]
           : null,

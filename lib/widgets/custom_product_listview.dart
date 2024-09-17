@@ -20,7 +20,7 @@ class _CustomProductListviewState extends State<CustomProductListview> {
     },
     {
       "imagePath": AppImages.productImage2,
-      'productTitle': "Chino Suite",
+      'productTitle': "Chino Pant",
       "productSize": "Size: L",
       "productPrice": "\$120.00",
     },

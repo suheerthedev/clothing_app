@@ -21,7 +21,7 @@ class _CustomProductGridWidgetState extends State<CustomProductGridWidget> {
     },
     {
       "imagePath": AppImages.productImage2,
-      'productTitle': "Chino Suite",
+      'productTitle': "Chino Pant",
       "rating": "5",
       "price": "\$120.00",
       "isLiked": false,
