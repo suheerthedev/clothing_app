@@ -21,23 +21,20 @@ class CustomProductDetailsSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        width: width,
-        height: height,
-        padding: padding,
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.transparent),
-          color: AppColors.surfaceColor,
-          borderRadius: BorderRadius.circular(borderRadius),
-        ),
-        child: ClipRRect(
-          borderRadius: applyImageRadius
-              ? BorderRadius.circular(borderRadius)
-              : BorderRadius.zero,
-          child: SvgPicture.asset(imagePath, fit: fit),
-        ),
+    return Container(
+      width: width,
+      height: height,
+      padding: padding,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.transparent),
+        color: AppColors.surfaceColor,
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      child: ClipRRect(
+        borderRadius: applyImageRadius
+            ? BorderRadius.circular(borderRadius)
+            : BorderRadius.zero,
+        child: SvgPicture.asset(imagePath, fit: fit),
       ),
     );
   }
