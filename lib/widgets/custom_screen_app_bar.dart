@@ -61,7 +61,7 @@ class _CustomScreenAppBarState extends State<CustomScreenAppBar> {
       actions: widget.isActionable
           ? [
               Container(
-                margin: EdgeInsetsDirectional.symmetric(horizontal: 5),
+                margin: const EdgeInsetsDirectional.symmetric(horizontal: 5),
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(

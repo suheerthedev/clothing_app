@@ -62,11 +62,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Iconsax.star1,
                             color: Color(0xfffcaf23),
                           ),
-                          SizedBox(width: 5),
+                          const SizedBox(width: 5),
                           Text(
                             "4.9",
                             style: TextStyle(
@@ -112,7 +112,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     thickness: 2,
                     color: Color(0xffe6e6e6),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -124,7 +124,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       SizedBox(
                           height: 25,
                           child: ListView.separated(

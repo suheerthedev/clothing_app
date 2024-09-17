@@ -49,7 +49,7 @@ class CustomAppBarWidget extends StatelessWidget {
             Badge(
               alignment: Alignment.topRight,
               textColor: AppColors.onPrimaryTextColor,
-              label: Text('1'),
+              label: const Text('1'),
               largeSize: 8,
               smallSize: 0,
               child: Icon(

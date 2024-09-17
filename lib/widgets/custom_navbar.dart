@@ -9,7 +9,7 @@ import 'package:iconsax/iconsax.dart';
 import '../screens/authentication_screens/change_password_screen.dart';
 
 class CustomNavbar extends StatefulWidget {
-  CustomNavbar({super.key});
+  const CustomNavbar({super.key});
 
   @override
   State<CustomNavbar> createState() => _CustomNavbarState();

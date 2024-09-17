@@ -4,7 +4,7 @@ import 'package:clothing_store_app/widgets/horizontal_product_item.dart';
 import 'package:flutter/material.dart';
 
 class CustomProductListview extends StatefulWidget {
-  CustomProductListview({super.key});
+  const CustomProductListview({super.key});
 
   @override
   State<CustomProductListview> createState() => _CustomProductListviewState();
