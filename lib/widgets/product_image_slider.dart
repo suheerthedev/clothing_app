@@ -1,4 +1,3 @@
-import 'package:clothing_store_app/util/app_images.dart';
 import 'package:clothing_store_app/widgets/custom_product_details_slider.dart';
 import 'package:clothing_store_app/widgets/custom_screen_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +6,9 @@ import 'package:flutter_svg/svg.dart';
 class ProductImageSlider extends StatelessWidget {
   const ProductImageSlider({
     super.key,
+    required this.images,
   });
+  final List<String> images;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class ProductImageSlider extends StatelessWidget {
               height: 400,
               child: Padding(
                 padding: const EdgeInsets.all(16),
-                child: Center(child: SvgPicture.asset(AppImages.productImage5)),
+                child: Center(child: SvgPicture.asset(images[0])),
               )),
           //Slider
           Positioned(
@@ -32,7 +33,7 @@ class ProductImageSlider extends StatelessWidget {
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 physics: const AlwaysScrollableScrollPhysics(),
-                itemCount: 6,
+                itemCount: images.length,
                 separatorBuilder: (_, __) => const SizedBox(width: 5),
                 itemBuilder: (_, index) {
                   return CustomProductDetailsSlider(
@@ -40,7 +41,7 @@ class ProductImageSlider extends StatelessWidget {
                     padding: const EdgeInsets.only(
                         top: 8, left: 8, right: 8, bottom: 0),
                     applyImageRadius: false,
-                    imagePath: AppImages.productImage5,
+                    imagePath: images[index],
                   );
                 },
               ),

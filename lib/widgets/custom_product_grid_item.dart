@@ -16,10 +16,11 @@ class ProductGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String imagePath = (product['imagePath'] as List<String>).first;
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const ProductDetails();
+          return ProductDetails(product: product);
         }));
       },
       child: Container(
@@ -46,7 +47,7 @@ class ProductGridItem extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: SvgPicture.asset(
-                  product['imagePath'],
+                  imagePath,
                   fit: BoxFit.contain,
                 ),
               ),
