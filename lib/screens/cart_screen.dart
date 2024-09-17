@@ -19,6 +19,7 @@ class _CartScreenState extends State<CartScreen> {
       appBar: const CustomScreenAppBar(
         title: "My Cart",
         isLeading: false,
+        isActionable: false,
       ),
       body: Container(
           width: double.infinity,

@@ -32,6 +32,7 @@ class SettingsScreen extends StatelessWidget {
       appBar: const CustomScreenAppBar(
         title: "Settings",
         isLeading: true,
+        isActionable: false,
       ),
       body: ListView.builder(
         itemCount: settingsList.length,

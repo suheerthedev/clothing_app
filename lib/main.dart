@@ -13,6 +13,7 @@ import 'package:clothing_store_app/screens/onboarding_screen_1.dart';
 import 'package:clothing_store_app/screens/authentication_screens/sign_in_screen.dart';
 import 'package:clothing_store_app/screens/payment_method_screen.dart';
 import 'package:clothing_store_app/screens/privacy_policy_screen.dart';
+import 'package:clothing_store_app/screens/product_details.dart';
 import 'package:clothing_store_app/screens/profile_details_screen.dart';
 import 'package:clothing_store_app/screens/profile_screen.dart';
 import 'package:clothing_store_app/screens/settings_screen.dart';
@@ -72,6 +73,7 @@ class MyApp extends StatelessWidget {
         '/privacy_policy_screen': (context) => const PrivacyPolicyScreen(),
         '/invite_friends_screen': (context) => const InviteFriendsScreen(),
         '/log_out_screen': (context) => const LogOutScreen(),
+        '/product_details': (context) => const ProductDetails(),
       },
     );
   }

@@ -12,8 +12,11 @@ class PaymentMethodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController cardCont = TextEditingController();
     return Scaffold(
-      appBar:
-          const CustomScreenAppBar(title: "Payment Methods", isLeading: true),
+      appBar: const CustomScreenAppBar(
+        title: "Payment Methods",
+        isLeading: true,
+        isActionable: false,
+      ),
       body: Column(
         children: [
           Padding(

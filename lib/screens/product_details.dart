@@ -1,6 +1,7 @@
 import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:clothing_store_app/util/app_images.dart';
 import 'package:clothing_store_app/widgets/custom_product_details_slider.dart';
+import 'package:clothing_store_app/widgets/custom_screen_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -47,6 +48,12 @@ class ProductDetails extends StatelessWidget {
                       },
                     ),
                   ),
+                ),
+                CustomScreenAppBar(
+                  title: '',
+                  isLeading: true,
+                  color: Colors.transparent,
+                  isActionable: true,
                 )
               ],
             ),

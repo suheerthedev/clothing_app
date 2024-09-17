@@ -16,6 +16,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: const CustomScreenAppBar(
         title: 'Profile',
         isLeading: false,
+        isActionable: false,
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
