@@ -1,5 +1,6 @@
 import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:clothing_store_app/widgets/product_image_slider.dart';
+import 'package:readmore/readmore.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -42,9 +43,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                   top: 24, left: 24, right: 24, bottom: 0),
               width: double.infinity,
               height: 400,
-              decoration: BoxDecoration(
-                color: AppColors.surfaceColor,
-              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -94,10 +92,18 @@ class _ProductDetailsState extends State<ProductDetails> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Text(
+                      ReadMoreText(
                         """Lorem ipsum odor amet, consectetuer adipiscing elit. Tempor suspendisse natoque vivamus senectus nisl. Elit ad aenean, odio taciti fringilla convallis senectus. Tempus euismod sagittis mollis vulputate curabitur. Odio nam sapien quam diam gravida magnis dolor cubilia est. Scelerisque mus lobortis ornare consectetur vitae porta. Sapien lectus tempus mus finibus sodales.""",
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
+                        trimLines: 3,
+                        trimMode: TrimMode.Line,
+                        moreStyle: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: AppColors.secondaryColor,
+                            fontWeight: FontWeight.w500),
+                        lessStyle: TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: AppColors.secondaryColor,
+                            fontWeight: FontWeight.w500),
                         style: TextStyle(
                           color: AppColors.primaryTextColor,
                           fontSize: 14,
