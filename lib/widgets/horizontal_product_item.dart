@@ -80,16 +80,20 @@ class _HorizontalProductItemState extends State<HorizontalProductItem> {
                     padding: EdgeInsets.symmetric(horizontal: 5),
                     child: Icon(Iconsax.menu),
                   )
-                : Padding(padding: EdgeInsets.all(0)),
+                : const Padding(padding: EdgeInsets.all(0)),
             Container(
+                // padding: EdgeInsets.all(8),
                 margin: const EdgeInsets.only(right: 5, left: 0),
                 height: 250,
                 width: 90,
+                decoration: BoxDecoration(
+                    color: const Color(0xffeee5db),
+                    borderRadius: BorderRadius.circular(0)),
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(5),
                     child: SvgPicture.asset(
                       widget.product["imagePath"],
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ))),
             Expanded(
               child: Row(
@@ -162,7 +166,7 @@ class _HorizontalProductItemState extends State<HorizontalProductItem> {
                             ],
                           ),
                         )
-                      : SizedBox(),
+                      : const SizedBox(),
                 ],
               ),
             )

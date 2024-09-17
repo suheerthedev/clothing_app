@@ -23,22 +23,31 @@ class ProductGridItem extends StatelessWidget {
         }));
       },
       child: Container(
-        margin: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(10),
         width: 160,
         height: 180,
         decoration: BoxDecoration(
+          // color: Colors.red,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Stack(
           children: [
-            SizedBox(
+            Container(
+              padding:
+                  const EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 0),
               width: 160,
               height: 120,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25),
+                    topRight: Radius.circular(25)),
+                color: Color(0xffeee5db),
+              ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: SvgPicture.asset(
                   product['imagePath'],
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -50,25 +59,29 @@ class ProductGridItem extends StatelessWidget {
                     : FontAwesomeIcons.heart,
                 size: 15,
                 color: product["isLiked"]
-                    ? Colors.red
+                    ? const Color(0xff704f38)
                     : AppColors.onPrimaryTextColor,
               ),
             ),
             Positioned(
               top: 125,
               left: 3,
-              right: 5,
+              right: 3,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        product["productTitle"],
-                        style: TextStyle(
-                          color: AppColors.primaryTextColor,
-                          fontWeight: FontWeight.w500,
+                      Expanded(
+                        child: Text(
+                          product["productTitle"],
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: AppColors.primaryTextColor,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                       Row(

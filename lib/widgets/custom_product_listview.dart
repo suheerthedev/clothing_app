@@ -14,33 +14,39 @@ class _CustomProductListviewState extends State<CustomProductListview> {
   List<Map<String, dynamic>> productDetails = [
     {
       "imagePath": AppImages.productImage1,
-      'productTitle': "Brown Jacket",
+      'productTitle': "Oversized T-shirt",
       "productSize": "Size: M",
       "productPrice": "\$83.97",
     },
     {
       "imagePath": AppImages.productImage2,
-      'productTitle': "Brown Suite",
+      'productTitle': "Chino Suite",
       "productSize": "Size: L",
       "productPrice": "\$120.00",
     },
     {
       "imagePath": AppImages.productImage3,
-      'productTitle': "Jacket",
+      'productTitle': "Leather Jacket",
       "productSize": "Size: XL",
       "productPrice": "\$83.00",
     },
     {
       "imagePath": AppImages.productImage4,
-      'productTitle': "Straight Fit",
+      'productTitle': "Abaya",
       "productSize": "Size: S",
       "productPrice": "\$120.00",
     },
     {
       "imagePath": AppImages.productImage5,
-      'productTitle': "Brown Pant",
+      'productTitle': "Long Coat",
       "productSize": "Size: S",
       "productPrice": "\$98.00",
+    },
+    {
+      "imagePath": AppImages.productImage6,
+      'productTitle': "Polo",
+      "productSize": "Size: M",
+      "productPrice": "\$28.00",
     },
   ];
 
