@@ -67,6 +67,8 @@ class _CustomBottomModalSheetState extends State<CustomBottomModalSheet> {
                 child: ElevatedButton(
                     onPressed: () {
                       widget.removeProduct();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Removed from cart!')));
                       Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(

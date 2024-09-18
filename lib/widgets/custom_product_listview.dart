@@ -122,6 +122,10 @@ class _CustomProductListviewState extends State<CustomProductListview> {
                                     setState(() {
                                       cartItems.removeAt(index);
                                     });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(
+                                            content:
+                                                Text('Removed from cart!')));
                                     Navigator.pop(context);
                                   },
                                   style: ElevatedButton.styleFrom(
