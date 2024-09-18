@@ -1,5 +1,6 @@
 import 'package:clothing_store_app/util/app_colors.dart';
 import 'package:clothing_store_app/util/app_images.dart';
+import 'package:clothing_store_app/util/data.dart';
 import 'package:clothing_store_app/widgets/horizontal_product_item.dart';
 import 'package:flutter/material.dart';
 
@@ -53,7 +54,7 @@ class _CustomProductListviewState extends State<CustomProductListview> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: productDetails.length,
+        itemCount: cartItems.length,
         itemBuilder: (context, index) {
           return HorizontalProductItem(
             product: productDetails[index],
@@ -118,10 +119,10 @@ class _CustomProductListviewState extends State<CustomProductListview> {
                             Expanded(
                               child: ElevatedButton(
                                   onPressed: () {
-                                    Navigator.pop(context);
                                     setState(() {
-                                      productDetails.removeAt(index);
+                                      cartItems.removeAt(index);
                                     });
+                                    Navigator.pop(context);
                                   },
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: AppColors.secondaryColor,
@@ -145,7 +146,7 @@ class _CustomProductListviewState extends State<CustomProductListview> {
             hasIncrementAndDecrement: true,
             decrementDeleteFromCart: () {
               setState(() {
-                productDetails.removeAt(index);
+                cartItems.removeAt(index);
               });
             },
           );

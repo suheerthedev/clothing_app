@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_colors.dart';
+import 'package:clothing_store_app/util/data.dart';
 import 'package:clothing_store_app/widgets/product_image_slider.dart';
 import 'package:readmore/readmore.dart';
 import 'package:flutter/material.dart';
@@ -268,7 +269,13 @@ class _ProductDetailsState extends State<ProductDetails> {
               SizedBox(
                 width: 200,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        cartItems.add(widget.product!);
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Added to cart!')));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.secondaryColor,
                       iconColor: AppColors.onPrimaryIconColor,

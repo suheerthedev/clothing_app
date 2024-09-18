@@ -1,4 +1,5 @@
 import 'package:clothing_store_app/util/app_images.dart';
+import 'package:clothing_store_app/util/data.dart';
 import 'package:clothing_store_app/widgets/custom_product_grid_item.dart';
 import 'package:flutter/material.dart';
 
@@ -85,6 +86,21 @@ class _CustomProductGridWidgetState extends State<CustomProductGridWidget> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    // Sync productDetails with the wishlist when the widget is built
+    _syncWithWishlist();
+  }
+
+  void _syncWithWishlist() {
+    for (var product in productDetails) {
+      product['isLiked'] = wishlist.any(
+        (item) => item['productTitle'] == product['productTitle'],
+      );
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GridView.builder(
       shrinkWrap: true,
@@ -100,6 +116,13 @@ class _CustomProductGridWidgetState extends State<CustomProductGridWidget> {
             setState(() {
               productDetails[index]['isLiked'] =
                   !productDetails[index]['isLiked'];
+              if (productDetails[index]['isLiked']) {
+                wishlist.add(productDetails[index]);
+              } else {
+                wishlist.removeWhere((item) =>
+                    item['productTitle'] ==
+                    productDetails[index]['productTitle']);
+              }
             });
           },
         );
