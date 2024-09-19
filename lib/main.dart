@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
       home: const MainScreen(),
+      //Adding Random Code to Push Code and keep up my github streak, sorry but was busy in uni things
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
         '/welcomescreen': (context) => const WelcomeScreen(),
