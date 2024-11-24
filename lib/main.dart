@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                   color: AppColors.primaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w400))),
-      home: const MainScreen(),
+      home: const SplashScreen(),
       //Adding Random Code to Push Code and keep up my github streak, sorry but was busy in uni things
       routes: {
         '/splashscreen': (context) => const SplashScreen(),
